@@ -1,24 +1,33 @@
-# README
+### サービス概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+勉強で行き詰まった時に、
+らんてくんを描いて、
+やすらぎと笑いを与え、現実逃避できるサービスです。
 
-Things you may want to cover:
+### メインのターゲットユーザー
 
-* Ruby version
+プログラミングスクールRUNTEQ、受講生
+駆け出しWebエンジニアの方
 
-* System dependencies
+らんてくんを書きたい人向け
+プログラミングの勉強に行き詰まっている同志の方
 
-* Configuration
+### ユーザーが抱える課題
 
-* Database creation
+-  RUNTEQコミュニティに馴染めない
+  （テキストだと交流のハードルが高い）
+- 一人で勉強に行き詰まっている　
+- 勉強で行き詰まった時に、誰にも相談できず気分転換ができない。
+- らんてくんを友だちに見せると「デジモン？」と言われる。ぴえん。
 
-* Database initialization
+### 解決方法
+- このサービスを通じて、RUNTEQ内での交流のきっかけになる！！！
+- らんてくんの知名度を上げて、RUNTEQの仲間を増やして勉強の挫折率を減らす。
+- RUNTEQの知名度を上げて、就職率を上げる。( ^ω^ )
+- らんてくんを描いて気分転換、現実逃避できる
 
-* How to run the test suite
+### 画面遷移図
+https://www.figma.com/file/2XtnFkUj0KiWaGlFNfXgPK/draft?node-id=0%3A1
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### ER図
+![](https://i.imgur.com/y8mQufM.png)
