@@ -22,3 +22,4 @@ function hotfixPostcssLoaderConfig (subloader) {
     const loader = environment.loaders.get(loaderName);
     loader.use.forEach(hotfixPostcssLoaderConfig);
   });
+  
