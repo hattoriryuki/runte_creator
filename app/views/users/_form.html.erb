@@ -1,37 +1,31 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%=form_with model: user do |f|%>
+  <div class="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto">
+    <div class="sm:col-span-2">
+      <%= f.label :name, 'ニックネーム*', class:"inline-block text-sm sm:text-base mb-2"%>
+      <%= f.text_field :name, class:"w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="sm:col-span-2">
+      <%= f.label :email, 'メールアドレス*', class:"inline-block text-sm sm:text-base mb-2"%>
+      <%= f.email_field :email, class:"w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="sm:col-span-2">
+      <%= f.label :password, 'パスワード*', class:"inline-block text-sm sm:text-base mb-2"%>
+      <%= f.password_field :password, class:"w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
-  </div>
+    <div class="sm:col-span-2">
+      <%= f.label :password_confirmation, "パスワード(確認)*", class:"inline-block text-sm sm:text-base mb-2"%>
+      <%= f.password_field :password_confirmation, class:"w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.text_field :password_confirmation %>
+    <div class="sm:col-span-2 flex justify-between items-center text-center">
+      <%= link_to users_path ,class:"text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2"  do %>
+        <svg class="w-6 h-6 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+      <% end %>
+      <%=f.submit "登録", class:"inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"%>
+      <span class="text-gray-500 text-sm">*必須</span>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%end%>
