@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      picture: 'イラスト'
+      like: 'いいね'
+    attributes:
+      user:
+        name: 'ニックネーム'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード（確認）'
+        avatar: 'アバター'
+      picture:
+        picture_comment: '一言'
+        image: 'らんてくん'

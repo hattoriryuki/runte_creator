@@ -1,0 +1,90 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    post: '投稿'
+    terms_of_user: '利用規約'
+    inquiry: 'お問い合わせ'
+    reset_password: 'パスワードリセット'
+    message:
+      require_login: 'ログインしてください'
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新できませんでした'
+      not_authenticated: '権限がありません'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      login_with_twitter: 'Twitterでログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  pictures:
+    index:
+      title: 'みんなのらんてくん'
+      no_result: '今はらんてくんがいないようです。'
+    likes:
+      title: 'いいね一覧'
+      no_result: 'いいね中のらんてくんはありません。'
+  likes:
+    create:
+      success: 'いいねしました'
+    destroy:
+      success: 'いいねを外しました'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+  password_resets:
+    new:
+      title: 'パスワードリセット申請'
+      submit: '送信'
+    edit:
+      title: 'パスワードリセット'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+     success: 'パスワードを変更しました'
+     fail: 'パスワードの変更に失敗しました'
+
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'
+    pictures:
+      index:
+        title: '掲示板一覧'
+      show:
+        title: '掲示板詳細'
+  time:
+    formats:
+        default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
+        long: "%Y/%m/%d %H:%M"
+        short: "%m/%d %H:%M"
