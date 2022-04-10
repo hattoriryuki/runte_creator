@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to root_path, notice: 'login was successed.'
+      redirect_back_or_to root_path, notice: t('.success')
     else
       render :new
     end
@@ -12,6 +12,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_path, notice: 'logout was successed.'
+    redirect_to root_path, notice: t('.success')
   end
 end
