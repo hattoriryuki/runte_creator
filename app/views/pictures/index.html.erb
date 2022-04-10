@@ -1,2 +1,15 @@
-<h1>Pictures#index</h1>
-<p>Find me in app/views/pictures/index.html.erb</p>
+<div class="box">
+  <% @pictures.each do |picture| %>
+    <div class='image' id="js-post-<%= picture.id %>" >
+      <div class='inlineimage'>
+        <img src=<%= "data:image/png;base64," + picture.image %> width="400" height="400">
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="newPath">
+  <button>
+    <%= link_to 'お絵描き画面へ', new_picture_path, data: {"turbolinks" => false} %>
+  </button>
+</div>

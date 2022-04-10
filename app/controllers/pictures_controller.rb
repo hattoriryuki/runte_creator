@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(image: params[:picture])
+    @picture = Picture.new(image: params[:picture], user_id: current_user.id)
     @picture.save
   end
 
