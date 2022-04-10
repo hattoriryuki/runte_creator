@@ -34,6 +34,17 @@ ja:
     destroy:
       success: 'ログアウトしました'
   pictures:
+    new:
+      width: '太さ'
+      width_1: '1px'
+      width_3: '3px'
+      width_5: '5px'
+      width_10: '10px'
+      color: '色'
+      eraser: '消しゴム'
+      clear: '全消し'
+      complete: '完成！'
+      download: 'ダウンロード'
     index:
       title: 'みんなのらんてくん'
       no_result: '今はらんてくんがいないようです。'
@@ -59,8 +70,8 @@ ja:
     create:
       success: 'パスワードリセット手順を送信しました'
     update:
-     success: 'パスワードを変更しました'
-     fail: 'パスワードの変更に失敗しました'
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
 
   admin:
     user_sessions:
