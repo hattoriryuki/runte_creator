@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     lineColor = color.value;
     ctx.strokeStyle = lineColor;
   });
-  
+
   pictureUpload.addEventListener('click', ()=> {
     if (drawJudgement === 0) {
       window.alert('何か記入してください')

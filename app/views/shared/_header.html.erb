@@ -5,7 +5,7 @@
     <% end %>
     <nav class="md:ml-auto flex flex-wrap items-right text-white ">
       <%= link_to t('defaults.gallary'), "#", class: 'mr-5 hover:text-yellow-500' %>
-      <%= link_to t('defaults.drawing'), "#", class: 'mr-5 hover:text-yellow-500' %>
+      <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-yellow-500', data: { "turbolinks" => false } %>
     </nav>
   </div>
   <div class="relative bg-purple-400">
