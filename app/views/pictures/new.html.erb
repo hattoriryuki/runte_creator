@@ -20,12 +20,12 @@
         <button class="clear bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-clear"><%= t('.clear') %></button>
       </div>
       <div class="form-group ml-10 mt-10">
-        <label><%= Picture.human_attribute_name(:picture_comment)%></label>
-        <textarea id="picture_comment" class="w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2"  placeholder="<%= t('.comment')%>"></textarea>
+        <label><%= Picture.human_attribute_name(:picture_comment) %></label>
+        <textarea id="picture_comment" class="w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" placeholder="<%= t('.comment') %>"></textarea>
       </div>
       <div class="mt-10 ml-10">
         <button class="text-xl px-2 py-1 text-yellow-500 border border-yellow-500 font-semibold rounded hover:bg-yellow-100" id= 'js-pictureUpload'><%= t('.complete') %></button> 
-        <button ><a id="js-downloadCanvas" href="#" download="canvas.jpg"><%= t('.download') %></a></button> 
+        <button><a id="js-downloadCanvas" href="#" download="canvas.jpg"><%= t('.download') %></a></button> 
       </div>
     </div>
   </div>
