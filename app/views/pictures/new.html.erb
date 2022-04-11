@@ -1,27 +1,30 @@
 <div class="container mx-auto content">
   <div class="flex flex-row">
     <div class="ml-20 mt-8 mb-8 wrapper">
-      <canvas class="drawPicture" id="js-drawPicture" width="1000" height="600"></canvas>
+      <canvas class="drawPicture" id="js-drawPicture" width="1000" height="550"></canvas>
     </div>
     <div>
-      <div class="mr-8 ml-10 mt-20 widthmenu">
+      <div class="mr-8 ml-10 mt-10 widthmenu">
         <p><%= t('.width') %></p>
         <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-1"><%= t('.width_1') %></button>
         <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-3"><%= t('.width_3') %></button>
         <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-5"><%= t('.width_5') %></button>
         <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-10"><%= t('.width_10') %></button>
       </div>
-    
-      <div class="mt-10 ml-10 colormenu">
+      <div class="mt-5 ml-10 colormenu">
         <p><%= t('.color') %></p>
         <input type="color" id="js-colorBox">
       </div>
-      <div class="mt-10 ml-10 drawmenu">
+      <div class="mt-5 ml-10 drawmenu">
         <button class="eraser bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-eraser"><%= t('.eraser') %></button>
         <button class="clear bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-clear"><%= t('.clear') %></button>
       </div>
+      <div class="form-group ml-10 mt-10">
+        <label><%= Picture.human_attribute_name(:picture_comment)%></label>
+        <textarea id="picture_comment" class="w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2"  placeholder="<%= t('.comment')%>"></textarea>
+      </div>
       <div class="mt-10 ml-10">
-        <button class="text-xl px-2 py-1 text-yellow-500 border border-yellow-500 font-semibold rounded hover:bg-yellow-100" id= 'js-pictureUpload'><%= t('.complete') %></button>
+        <button class="text-xl px-2 py-1 text-yellow-500 border border-yellow-500 font-semibold rounded hover:bg-yellow-100" id= 'js-pictureUpload'><%= t('.complete') %></button> 
         <button ><a id="js-downloadCanvas" href="#" download="canvas.jpg"><%= t('.download') %></a></button> 
       </div>
     </div>

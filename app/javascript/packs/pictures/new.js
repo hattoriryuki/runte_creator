@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   let canvas = document.getElementById('js-drawPicture');
   let ctx = canvas.getContext('2d'); // canvas要素に2Dの描画を行うことができるようになる
   const canvasWidth = 1000;
-  const canvasHeight = 600;
+  const canvasHeight = 550;
   const download = document.getElementById('js-downloadCanvas');
   const pictureUpload = document.getElementById('js-pictureUpload');
   const canvasClear = document.getElementById('js-clear');
@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   });
 
   pictureUpload.addEventListener('click', ()=> {
+    const comment = document.getElementById("picture_comment").value;
     if (drawJudgement === 0) {
       window.alert('何か記入してください')
     } else {
@@ -111,7 +112,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           let dataUrlBase64 = reader.result;
           let base64 = dataUrlBase64.replace(/data:.*\/.*;base64,/, '');
           formData.append("picture", base64);
-
+          formData.append("comment", comment);
           let response = await fetch('/pictures', {
             method: 'POST',
             headers: {'X-CSRF-Token': token},

@@ -45,6 +45,7 @@ ja:
       clear: '全消し'
       complete: '完成！'
       download: 'ダウンロード'
+      comment: '50文字以内で入力してください'
     index:
       title: 'みんなのらんてくん'
       no_result: '今はらんてくんがいないようです。'
