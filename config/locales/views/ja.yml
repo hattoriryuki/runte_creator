@@ -4,6 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
+    title: 'らんてくりえーたー'
     gallary: 'ギャラリー'
     drawing: 'お絵かきする'
     my_page: 'マイページ'
