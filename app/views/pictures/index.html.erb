@@ -1,22 +1,25 @@
-<div class="box">
-  <% @pictures.each do |picture| %>
-    <div class="grid grid-cols-4">
-      <div>
-        <table class="w-full border focus:ring rounded outline-none transition duration-100 px-3 py-2 mt-10">
-        <tr>
-          <th scope="col"><%= t('.runte_number', item: picture.id + 1) %></th>
-          <td><img src=<%= "data:image/png;base64," + picture.image %> width="400" height="400"></td>
-        </tr>
-        <tr>
-          <th scope="col"><%= Picture.human_attribute_name(:picture_comment) %></th>
-          <td class='text-center'><%= picture.picture_comment %></td>
-        </tr>
-        </table>
+<% if @pictures.present? %>
+  <div class="box">
+    <% @pictures.each do |picture| %>
+      <div class="grid grid-cols-4">
+        <div>
+          <table class="w-full border focus:ring rounded outline-none transition duration-100 px-3 py-2 mt-10">
+          <tr>
+            <th scope="col"><%= t('.runte_number', item: picture.id + 1) %></th>
+            <td><img src=<%= "data:image/png;base64," + picture.image %> width="400" height="400"></td>
+          </tr>
+          <tr>
+            <th scope="col"><%= Picture.human_attribute_name(:picture_comment) %></th>
+            <td class='text-center'><%= picture.picture_comment %></td>
+          </tr>
+          </table>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
-
+    <% end %>
+  </div>
+<% else %>
+  <p><%= t('.no_result')%></p>
+<% end %>
 <div class="newPath mt-5 mb-5">
   <%= link_to t('defaults.drawing'), new_picture_path, class: "bg-indigo-700 font-semibold text-white py-1 px-3 rounded", data: {"turbolinks" => false} %>
 </div>
