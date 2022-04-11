@@ -1,15 +1,22 @@
 <div class="box">
   <% @pictures.each do |picture| %>
-    <div class='image' id="js-post-<%= picture.id %>" >
-      <div class='inlineimage'>
-        <img src=<%= "data:image/png;base64," + picture.image %> width="400" height="400">
+    <div class="grid grid-cols-4">
+      <div>
+        <table class="w-full border focus:ring rounded outline-none transition duration-100 px-3 py-2 mt-10">
+        <tr>
+          <th scope="col"><%= t('.runte_number', item: picture.id + 1) %></th>
+          <td><img src=<%= "data:image/png;base64," + picture.image %> width="400" height="400"></td>
+        </tr>
+        <tr>
+          <th scope="col"><%= Picture.human_attribute_name(:picture_comment) %></th>
+          <td class='text-center'><%= picture.picture_comment %></td>
+        </tr>
+        </table>
       </div>
     </div>
   <% end %>
 </div>
 
-<div class="newPath">
-  <button>
-    <%= link_to 'お絵描き画面へ', new_picture_path, data: {"turbolinks" => false} %>
-  </button>
+<div class="newPath mt-5 mb-5">
+  <%= link_to t('defaults.drawing'), new_picture_path, class: "bg-indigo-700 font-semibold text-white py-1 px-3 rounded", data: {"turbolinks" => false} %>
 </div>

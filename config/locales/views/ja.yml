@@ -49,6 +49,7 @@ ja:
     index:
       title: 'みんなのらんてくん'
       no_result: '今はらんてくんがいないようです。'
+      runte_number: "%{item}番目に生まれたらんてくん"
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'
