@@ -51,6 +51,9 @@ ja:
       title: 'みんなのらんてくん'
       no_result: '今はらんてくんがいないようです。'
       runte_number: "%{item}番目に生まれたらんてくん"
+    show:
+      runte_parent: 'このらんてくんの生みの親'
+      share: 'Twitterシェア'
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'
