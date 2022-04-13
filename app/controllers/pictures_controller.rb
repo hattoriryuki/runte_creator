@@ -4,11 +4,17 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(image: params[:picture], user_id: current_user.id, picture_comment: params[:comment])
+    @picture = current_user.pictures.build(picture_params)
     @picture.save
   end
 
   def index
     @pictures = Picture.all
+  end
+
+  private
+
+  def picture_params
+    params.require(:picture).permit(:image, :picture_comment, :user)
   end
 end
