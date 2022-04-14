@@ -36,6 +36,10 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  oauths:
+    callback:
+      success: 'ログインしました'
+      fail: 'ユーザー認証に失敗しました'
   pictures:
     index:
       title: 'ギャラリー'
