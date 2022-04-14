@@ -16,7 +16,7 @@
       <p class="text-base font-bold text-center pt-6 sm:pt-8 lg:pt-12"><%= @user.name %>が今までに投稿してくれた歴代らんてくん達</p>
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 p-5">
       <% if @user.pictures.presence %>
-        <%= render partial: 'picture', collection: @user.pictures, as: 'picture' %>
+        <%= render @pictures %>
       <% else %>
         <p class="p-6"><%= t('.no_result') %></p>
       <% end %> 
