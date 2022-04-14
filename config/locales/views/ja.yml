@@ -51,9 +51,8 @@ ja:
     create:
       success: '投稿できました'
     index:
-      title: 'みんなのらんてくん'
+      title: 'ギャラリー'
       no_result: '今はらんてくんがいないようです。'
-      runte_number: "%{item}番目に生まれたらんてくん"
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'

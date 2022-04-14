@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
   end
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.includes(:user).order(created_at: :desc)
   end
 
   private

@@ -1,25 +1,15 @@
-<% if @pictures.present? %>
-  <div class="box">
-    <% @pictures.each do |picture| %>
-      <div class="grid grid-cols-4">
-        <div>
-          <table class="w-full border focus:ring rounded outline-none transition duration-100 px-3 py-2 mt-10">
-          <tr>
-            <th scope="col"><%= t('.runte_number', item: picture.id + 1) %></th>
-            <td><img src=<%= "data:image/png;base64," + picture.image %> width="400" height="400"></td>
-          </tr>
-          <tr>
-            <th scope="col"><%= Picture.human_attribute_name(:picture_comment) %></th>
-            <td class='text-center'><%= picture.picture_comment %></td>
-          </tr>
-          </table>
-        </div>
-      </div>
-    <% end %>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h2 class="sm:text-3xl font-bold text-center mb-4 md:mb-6"><%= t('.title') %></h2>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">みんなが今までに投稿してくれた歴代らんてくん達だぞ！</p>
+    </div>
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <% if @pictures.present? %>
+        <%= render @pictures %>
+      <% else %>
+        <p><%= t('.no_result') %></p>
+      <% end %>
+    </div>
   </div>
-<% else %>
-  <p><%= t('.no_result')%></p>
-<% end %>
-<div class="newPath mt-5 mb-5">
-  <%= link_to t('defaults.drawing'), new_picture_path, class: "bg-indigo-700 font-semibold text-white py-1 px-3 rounded", data: { 'turbolinks' => false } %>
-</div>
+</section>
