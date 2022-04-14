@@ -118,8 +118,11 @@ document.addEventListener('DOMContentLoaded',()=> {
             headers: {'X-CSRF-Token': token},
             body: formData
           });
-  
-          window.location.replace('/pictures')
+          if (comment.length < 50){
+          window.location.replace('/pictures');
+          }else{
+            document.getElementById("js-flash-notice").classList.remove("hidden");
+          }
         }
       }, 'image/png');
     };

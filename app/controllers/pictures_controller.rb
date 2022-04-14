@@ -4,8 +4,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = current_user.pictures.build(picture_params)
-    @picture.save
+    picture = current_user.pictures.build(picture_params)
+    if picture.save
+      flash[:notice] = t('.success')
+    else
+      render :new
+    end
   end
 
   def index
