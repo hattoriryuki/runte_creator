@@ -22,6 +22,9 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    show:
+      title: 'ユーザー紹介'
+      no_result: '今はらんてくんがいないようです。'
   user_sessions:
     new:
       title: 'ログイン'
