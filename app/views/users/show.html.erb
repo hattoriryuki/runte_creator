@@ -6,14 +6,12 @@
         <div class="w-24 md:w-32 h-24 md:h-32 bg-gray-100 rounded-full overflow-hidden shadow-lg">
           <%= image_tag "runtekun_01.png", class:"w-full h-full object-cover object-center"%>
         </div>
-        <div>
         <div class="text-indigo-500 text-3xl font-bold text-center sm:text-left border-b-2 border-black">
           <%= @user.name %>
         </div>
-        </div>
       </div>
     </div>
-      <p class="text-base font-bold text-center pt-6 sm:pt-8 lg:pt-12"><%= @user.name %>が今までに投稿してくれた歴代らんてくん達</p>
+    <p class="text-base font-bold text-center pt-6 sm:pt-8 lg:pt-12"><%= @user.name %>が今までに投稿してくれた歴代らんてくん達</p>
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 p-5">
       <% if @user.pictures.presence %>
         <%= render @pictures %>
