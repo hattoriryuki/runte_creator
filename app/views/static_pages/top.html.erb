@@ -1,16 +1,16 @@
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12">らんてくんをお絵描きして自慢しよう！</h2>
-    <%= image_tag '04_a.png'  %>
+      <%= image_tag '04_a.png'  %>
     <!--ボタン-->
-    <div class="flex justify-center mt-4">
-      <%= button_to "ログインしてあそぶ", login_path, method: :post, class: "text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
-    </div>
-      <div class="flex justify-center mt-4">
-        <%= button_to "ゲストログインしてあそぶ", '#', method: :post, class: "text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
-      </div>
         <div class="flex justify-center mt-4">
-          <%= button_to "みんなのらんてくんを見る", '#', method: :post, class: "text-white bg-indigo-400 hover:bg-gradient-to-br hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
+          <%= button_to "ログインしてあそぶ", login_path, method: :post, class: "text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" if current_user.nil?  %>
         </div>
-    </div>
+          <div class="flex justify-center mt-4">
+            <%= button_to "ゲストログインしてあそぶ", '#', method: :post, class: "text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" if current_user.nil? %>
+          </div>
+            <div class="flex justify-center mt-4">
+              <%= button_to "みんなのらんてくんを見る", '#', method: :post, class: "text-white bg-indigo-400 hover:bg-gradient-to-br hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
+            </div>
+  </div>
 </div>
