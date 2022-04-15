@@ -1,0 +1,10 @@
+<div class="max-w-screen-md mx-auto">
+  <div class="text-red-700 bg-red-100 border border-red-400 rounded px-4 py-3" role="alert">
+    <strong class="font-bold">Error!</strong><br />
+    <ul class="block sm:inline">
+      <% object.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
