@@ -23,6 +23,9 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    show:
+      title: 'ユーザー紹介'
+      no_result: '今はらんてくんがいないようです。'
   user_sessions:
     new:
       title: 'ログイン'
@@ -48,12 +51,14 @@ ja:
       download: 'ダウンロード'
       comment: '50文字以内で入力してください'
     index:
-      title: 'みんなのらんてくん'
+      title: 'ギャラリー'
       no_result: '今はらんてくんがいないようです。'
       runte_number: "%{item}番目に生まれたらんてくん"
     show:
       runte_parent: 'このらんてくんの生みの親'
       share: 'Twitterシェア'
+    picture:
+      about_user: 'このらんてくんの生みの親'
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'

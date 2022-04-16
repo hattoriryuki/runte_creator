@@ -1,0 +1,10 @@
+<div class="w-1/2 md:w-1/4 p-6 mb-6">
+  <div id="picture-id-<%= picture.id %>">
+    <div class="overflow-hidden">
+      <div class="object-cover object-center h-full w-full">
+        <%= image_tag "data:image/png;base64," + picture.image, size:'600x360'%>
+        <%= picture.picture_comment %>
+      </div>
+    </div>
+  </div>
+</div> 
