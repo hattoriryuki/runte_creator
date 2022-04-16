@@ -23,5 +23,6 @@
       <a href="#"><%= t('.password_forget') %></a>
     </div>
   <% end %>
+    <%= link_to t('.login_with_twitter'), auth_at_provider_path(provider: :twitter) %>
 </div>
 
