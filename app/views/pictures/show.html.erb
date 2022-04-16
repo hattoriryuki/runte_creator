@@ -14,9 +14,9 @@
         <%= link_to @picture.user.name, user_path, class: 'inline-flex py-6 text-3xl underline' %>
       </div>
       <div class="flex justify-center mt-10">
-        <button class="inline-flex text-white bg-twitter border-0 py-2 px-6 focus:outline-none hover:bg-blue-500 rounded text-lg"><%= t('.share') %></button>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-lang="ja" data-size="large" data-hashtags="<%= t('.share')%>" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <% if @picture.user_id == current_user.id %>
-          <%= link_to t('.edit'), picture_path, class: 'inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg ml-5' %>
+          <%= link_to t('.edit'), picture_path, class: 'inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-sm ml-5' %>
         <% end %>
       </div>
     </div>

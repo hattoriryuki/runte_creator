@@ -56,7 +56,7 @@ ja:
       runte_number: "%{item}番目に生まれたらんてくん"
     show:
       runte_parent: 'このらんてくんの生みの親'
-      share: 'Twitterシェア'
+      share: 'らんてくりえーたー#RUNTEQ'
       edit: '編集'
     picture:
       about_user: 'このらんてくんの生みの親'
