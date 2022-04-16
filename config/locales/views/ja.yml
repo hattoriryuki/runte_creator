@@ -19,9 +19,13 @@ ja:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
+      login_with_twitter: 'Twitterでログイン'
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    show:
+      title: 'ユーザー紹介'
+      no_result: '今はらんてくんがいないようです。'
   user_sessions:
     new:
       title: 'ログイン'
@@ -39,8 +43,10 @@ ja:
       fail: 'ユーザー認証に失敗しました'
   pictures:
     index:
-      title: 'みんなのらんてくん'
+      title: 'ギャラリー'
       no_result: '今はらんてくんがいないようです。'
+    picture:
+      about_user: 'このらんてくんの生みの親'
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'
