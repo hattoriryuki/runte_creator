@@ -50,12 +50,14 @@ ja:
       complete: '完成！'
       download: 'ダウンロード'
       comment: '50文字以内で入力してください'
+      flash_danger: 'コメントは50文字以内で入力して下さい'
+    create:
+      success: '投稿できました'
     index:
       title: 'ギャラリー'
       no_result: '今はらんてくんがいないようです。'
-      runte_number: "%{item}番目に生まれたらんてくん"
     show:
-      runte_parent: 'このらんてくんの生みの親'
+      about_user: 'このらんてくんの生みの親'
       share: 'らんてくりえーたー#RUNTEQ'
       edit: '編集'
     picture:

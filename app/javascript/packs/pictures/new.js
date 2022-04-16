@@ -111,15 +111,18 @@ document.addEventListener('DOMContentLoaded',()=> {
         reader.onload = async function() {
           let dataUrlBase64 = reader.result;
           let base64 = dataUrlBase64.replace(/data:.*\/.*;base64,/, '');
-          formData.append("picture", base64);
-          formData.append("comment", comment);
+          formData.append("picture[image]", base64);
+          formData.append("picture[picture_comment]", comment);
           let response = await fetch('/pictures', {
             method: 'POST',
             headers: {'X-CSRF-Token': token},
             body: formData
           });
-  
-          window.location.replace('/pictures')
+          if (comment.length < 50){
+          window.location.replace('/pictures');
+          }else{
+            document.getElementById("js-flash-notice").classList.remove("hidden");
+          }
         }
       }, 'image/png');
     };

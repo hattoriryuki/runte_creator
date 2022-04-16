@@ -4,8 +4,12 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(image: params[:picture], user_id: current_user.id, picture_comment: params[:comment])
-    @picture.save
+    picture = current_user.pictures.build(picture_params)
+    if picture.save
+      flash[:notice] = t('.success')
+    else
+      render :new
+    end
   end
 
   def index
@@ -14,5 +18,11 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+  end
+  
+  private
+
+  def picture_params
+    params.require(:picture).permit(:image, :picture_comment, :user)
   end
 end
