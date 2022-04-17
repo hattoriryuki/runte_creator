@@ -19,7 +19,6 @@ ja:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
-      login_with_twitter: 'Twitterでログイン'
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
