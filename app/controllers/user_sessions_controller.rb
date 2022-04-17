@@ -15,4 +15,15 @@ class UserSessionsController < ApplicationController
     logout
     redirect_to root_path, notice: t('.success')
   end
+
+  def guest_login
+    user = User.guest_login
+    if user
+      auto_login(user)
+      redirect_to root_path, notice: t('.success')
+    else
+      flash.now[:danger] = t('.fail')
+      render :new
+    end
+  end
 end
