@@ -10,6 +10,7 @@ ja:
     terms_of_user: '利用規約'
     inquiry: 'お問い合わせ'
     reset_password: 'パスワードリセット'
+    guest_login: 'ゲストログイン'
     message:
       require_login: 'ログインしてください'
       updated: '%{item}を更新しました'
@@ -36,6 +37,8 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+    guest_login:
+      success: 'ゲストとしてログインしました'
   pictures:
     index:
       title: 'ギャラリー'
