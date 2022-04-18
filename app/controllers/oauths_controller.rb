@@ -23,5 +23,6 @@ class OauthsController < ApplicationController
     @user = create_from(provider)
     reset_session
     auto_login(@user)
+    # テスト
   end
 end
