@@ -17,13 +17,9 @@ class UserSessionsController < ApplicationController
   end
 
   def guest_login
-    user = User.guest_login
-    if user
-      auto_login(user)
-      redirect_to root_path, notice: t('.success')
-    else
-      flash.now[:danger] = t('.fail')
-      render :new
-    end
+    @user = User.guest_login
+    auto_login(@user)
+    authorize(@user)
+    redirect_to root_path, notice: t('.success')
   end
 end

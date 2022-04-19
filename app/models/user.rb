@@ -17,6 +17,7 @@ class User < ApplicationRecord
       user.name = 'guest_user'
       user.password = SecureRandom.urlsafe_base64
       user.password_confirmation = user.password
+      user.role = 'guest'
     end
   end
 end
