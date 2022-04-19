@@ -1,3 +1,5 @@
 class StaticPagesController < ApplicationController
-  def top; end
+  def top
+    @pictures = Picture.last(3)
+  end
 end
