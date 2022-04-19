@@ -16,6 +16,10 @@ class PicturesController < ApplicationController
     @pictures = Picture.all.includes(:user).order(created_at: :desc)
   end
 
+  def likes
+    @like_pictures = current_user.like_pictures.include(:user).order(created_at: :desc)
+  end
+
   private
 
   def picture_params
