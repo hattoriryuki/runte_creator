@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def like(picture)
     like_pictures << picture
   end
+
+  def like?(picture)
+    like_pictures.include?(picture)
+  end
 end
