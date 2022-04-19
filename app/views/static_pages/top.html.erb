@@ -13,13 +13,13 @@
           <%= link_to "ゲストログインして遊ぶ", root_path , class:"text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2 " if current_user.nil?%>
           <%= link_to "みんなのらんてくんを見る", pictures_path , class:"text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2"%>
         </div>
-          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-            <% if @pictures.present? %>
-              <%= render @pictures %>
-            <% else %>
-              <p><%= t('.no_result') %></p>
-            <% end %>
-          </div>
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <% if @pictures.present? %>
+            <%= render @pictures %>
+          <% else %>
+            <p><%= t('.no_result') %></p>
+          <% end %>
+        </div>
        </div>
     </div>
   </div>
