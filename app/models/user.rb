@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  enum role: { general: 0, admin: 1, guest: 2 }
   authenticates_with_sorcery!
 
   has_many :pictures, dependent: :destroy
