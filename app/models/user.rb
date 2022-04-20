@@ -22,6 +22,10 @@ class User < ApplicationRecord
     like_pictures << picture
   end
 
+  def unlike(picture)
+    like_pictures.destroy(picture)
+  end
+
   def like?(picture)
     like_pictures.include?(picture)
   end
