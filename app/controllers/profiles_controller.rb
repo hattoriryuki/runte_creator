@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
 
   def show
     @pictures = @user.pictures
+    @like_pictures = @user.like_pictures.order(created_at: :desc)
   end
 
   def edit; end
