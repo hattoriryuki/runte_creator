@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   enum role: { general: 0, admin: 1, guest: 2 }
   authenticates_with_sorcery!
+  mount_uploader :avatar, AvatarUploader
 
   has_many :pictures, dependent: :destroy
   has_many :likes, dependent: :destroy

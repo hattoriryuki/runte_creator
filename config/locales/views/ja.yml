@@ -4,6 +4,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     post: '投稿'
+    title: 'らんてくりえーたー'
     gallary: 'ギャラリー'
     drawing: 'お絵かきする'
     my_page: 'マイページ'
@@ -16,6 +17,7 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
+      no_picture: '今はらんてくんがいないようです。'
   users:
     new:
       title: 'ユーザー登録'
@@ -25,7 +27,6 @@ ja:
       fail: 'ユーザー登録に失敗しました'
     show:
       title: 'ユーザー紹介'
-      no_result: '今はらんてくんがいないようです。'
   user_sessions:
     new:
       title: 'ログイン'
@@ -40,9 +41,23 @@ ja:
     guest_login:
       success: 'ゲストとしてログインしました'
   pictures:
+    new:
+      width: '太さ'
+      width_1: '1px'
+      width_3: '3px'
+      width_5: '5px'
+      width_10: '10px'
+      color: '色'
+      eraser: '消しゴム'
+      clear: '全消し'
+      complete: '完成！'
+      download: 'ダウンロード'
+      comment: '50文字以内で入力してください'
+      flash_danger: 'コメントは50文字以内で入力して下さい'
+    create:
+      success: '投稿できました'
     index:
       title: 'ギャラリー'
-      no_result: '今はらんてくんがいないようです。'
     picture:
       about_user: 'このらんてくんの生みの親'
     likes:
@@ -58,6 +73,9 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+    update:
+      success: 'プロフィールを編集しました'
+      fail: 'プロフィールの編集に失敗しました'
   password_resets:
     new:
       title: 'パスワードリセット申請'
@@ -67,8 +85,8 @@ ja:
     create:
       success: 'パスワードリセット手順を送信しました'
     update:
-     success: 'パスワードを変更しました'
-     fail: 'パスワードの変更に失敗しました'
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
 
   admin:
     user_sessions:
