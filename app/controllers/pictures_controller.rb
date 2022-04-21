@@ -17,7 +17,8 @@ class PicturesController < ApplicationController
   end
 
   def show
-    @picture = Picture.find(params[:id])
+    user = User.find(params[:id])
+    @picture = user.pictures.find(params[:id])
   end
   
   private
