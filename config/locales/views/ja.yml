@@ -16,6 +16,7 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
+      no_picture: '今はらんてくんがいないようです。'
   users:
     new:
       title: 'ユーザー登録'
@@ -25,7 +26,6 @@ ja:
       fail: 'ユーザー登録に失敗しました'
     show:
       title: 'ユーザー紹介'
-      no_result: '今はらんてくんがいないようです。'
   user_sessions:
     new:
       title: 'ログイン'
@@ -55,7 +55,6 @@ ja:
       success: '投稿できました'
     index:
       title: 'ギャラリー'
-      no_result: '今はらんてくんがいないようです。'
     picture:
       about_user: 'このらんてくんの生みの親'
     likes:
@@ -71,6 +70,9 @@ ja:
       title: 'プロフィール'
     edit:
       title: 'プロフィール編集'
+    update:
+      success: 'プロフィールを編集しました'
+      fail: 'プロフィールの編集に失敗しました'
   password_resets:
     new:
       title: 'パスワードリセット申請'
