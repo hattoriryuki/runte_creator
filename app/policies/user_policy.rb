@@ -1,6 +1,6 @@
 class UserPolicy < ApplicationPolicy
   def show?
-    user.general?
+    true
   end
 
   def new?
