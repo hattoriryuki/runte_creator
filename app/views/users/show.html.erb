@@ -4,7 +4,7 @@
     <div class="flex flex-col items-center gap-4 md:gap-6">
       <div class="flex flex-col sm:flex-row items-center gap-10">
         <div class="w-24 md:w-32 h-24 md:h-32 bg-gray-100 rounded-full overflow-hidden shadow-lg">
-          <%= image_tag "runtekun_01.png", class:"w-full h-full object-cover object-center"%>
+          <%= image_tag  @user.avatar_url, class:"w-full h-full object-cover object-center"%>
         </div>
         <div class="text-indigo-500 text-3xl font-bold text-center sm:text-left border-b-2 border-black">
           <%= @user.name %>
@@ -14,7 +14,7 @@
     <p class="text-base font-bold text-center pt-6 sm:pt-8 lg:pt-12"><%= @user.name %>が今までに投稿してくれた歴代らんてくん達</p>
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 p-5">
       <% if @pictures.presence %>
-        <%= render @pictures %>
+        <%= render partial: 'picture', collection: @pictures, as: 'picture' %>
       <% else %>
         <p class="p-6"><%= t('defaults.message.no_picture') %></p>
       <% end %> 
