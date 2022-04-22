@@ -6,7 +6,7 @@
       <p class="mb-2 leading-relaxed text-xl"><%= t('.about_user') %></p>
       <div class="flex justify-center">
         <div class="sm:w-24 sm:h-24 h-20 w-20 sm:mr-10 rounded-full overflow-hidden shadow-lg">
-          <%= image_tag  @picture.user.avatar_url, class:"w-full h-full object-cover object-center"%>
+          <%= image_tag @picture.user.avatar_url, class: 'w-full h-full object-cover object-center' %>
         </div>
         <%= link_to @picture.user.name, user_path, class: 'inline-flex py-6 text-3xl underline' %>
       </div>
