@@ -19,7 +19,6 @@ class UserSessionsController < ApplicationController
   def guest_login
     @user = User.guest_login
     auto_login(@user)
-    authorize(@user)
     redirect_to root_path, notice: t('.success')
   end
 end
