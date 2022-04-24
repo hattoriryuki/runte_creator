@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_064910) do
+ActiveRecord::Schema.define(version: 2022_04_19_145900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "authentications", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "provider", null: false
-    t.string "uid", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
-  end
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -49,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_064910) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "role", default: 0, null: false
     t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
