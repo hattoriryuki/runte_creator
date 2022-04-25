@@ -84,7 +84,7 @@ ja:
     edit:
       title: 'パスワードリセット'
     create:
-      success: 'パスワードリセット手順を送信しました'
+      success: 'パスワードリセットメールを送信しました'
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
