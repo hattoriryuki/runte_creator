@@ -65,6 +65,10 @@ ja:
     index:
       title: 'ギャラリー'
       message: 'みんなが今までに投稿してくれた歴代らんてくん達だぞ！'
+      no_result: '今はらんてくんがいないようです。'
+    show:
+      about_user: 'このらんてくんの生みの親'
+      share: 'らんてくりえーたー#RUNTEQ'
     picture:
       about_user: 'このらんてくんの生みの親'
       guest_user: 'ゲストユーザー'
@@ -91,7 +95,7 @@ ja:
     edit:
       title: 'パスワードリセット'
     create:
-      success: 'パスワードリセット手順を送信しました'
+      success: 'パスワードリセットメールを送信しました'
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'

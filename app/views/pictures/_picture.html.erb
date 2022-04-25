@@ -1,8 +1,10 @@
 <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
   <div id="picture-id-<%= picture.id %>">
     <div class="overflow-hidden">
-      <div class="object-cover object-center h-full w-full border">
-        <%= image_tag "data:image/png;base64," + picture.image, size: '600x360' %>
+      <div class="object-cover object-center h-full w-full">
+        <%= link_to picture_path(picture) do %>
+          <%= image_tag "data:image/png;base64," + picture.image, size: '600x360' %>
+        <% end %>
       </div>
       <h2 class="text-sm title-font font-medium text-indigo-500 mb-1 mt-5"><%= t('.about_user') %></h2>
       <% if picture.user.general? || picture.user.admin? %>
