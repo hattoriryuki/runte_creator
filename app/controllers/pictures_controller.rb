@@ -16,6 +16,10 @@ class PicturesController < ApplicationController
     @pictures = Picture.all.includes(:user).order(created_at: :desc)
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+  end
+  
   private
 
   def picture_params

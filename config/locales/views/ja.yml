@@ -55,6 +55,10 @@ ja:
       success: '投稿できました'
     index:
       title: 'ギャラリー'
+      no_result: '今はらんてくんがいないようです。'
+    show:
+      about_user: 'このらんてくんの生みの親'
+      share: 'らんてくりえーたー#RUNTEQ'
     picture:
       about_user: 'このらんてくんの生みの親'
     likes:
