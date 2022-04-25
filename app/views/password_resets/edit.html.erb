@@ -8,7 +8,7 @@
         <div class="max-w-screen-md grid sm:grid-cols-2 gap-4 mx-auto">
           <div class="sm:col-span-2">
             <%= f.label :email, class:"inline-block text-sm sm:text-base mb-2" %>
-            <%= f.email_field :email, class:"w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" %>
+            <%= @user.email %>
           </div>
           <div class="sm:col-span-2">
             <%= f.label :password, class:"inline-block text-sm sm:text-base mb-2" %>
