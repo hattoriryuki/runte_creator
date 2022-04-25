@@ -7,7 +7,11 @@
         <% end %>
       </div>
       <h2 class="text-sm title-font font-medium text-indigo-500 mb-1 mt-5"><%= t('.about_user') %></h2>
-      <%= link_to picture.user.name, user_path(picture.user), class: 'title-font text-lg font-medium text-gray-900 mb-3' %>
+      <% if picture.user.general? || picture.user.admin? %>
+        <%= link_to picture.user.name, user_path(picture.user), class: 'title-font text-lg font-medium text-gray-900 mb-3' %>
+      <% else %>
+        <h2 class="title-font text-lg font-medium text-gray-900 mb-3"><%= t('.guest_user') %></h2>
+      <% end %>
       <p class="leading-relaxed"><%= picture.picture_comment %></p>
     </div>
   </div>
