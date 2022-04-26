@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create show]
   resource :profile, only: %i[show edit update]
-  resources :pictures, only: %i[new create index show]
+  resources :pictures, only: %i[new create index show] do
+    collection do
+      get :likes
+    end
+  end
+  resources :likes, only: %i[create destroy]
   resources :password_resets, only: %i[new create edit update]
   
   get 'login', to: 'user_sessions#new'

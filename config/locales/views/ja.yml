@@ -83,6 +83,8 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+      user_drawn_pictures: '投稿したらんてくん'
+      user_liked_pictures: 'いいねしたらんてくん'
     edit:
       title: 'プロフィール編集'
     update:
