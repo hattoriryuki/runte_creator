@@ -26,5 +26,6 @@ class ProfilesController < ApplicationController
 
   def set_user
     @user = User.find(current_user.id)
+    authorize(@user, policy_class: ProfilePolicy)
   end
 end

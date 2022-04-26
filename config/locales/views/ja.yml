@@ -11,12 +11,19 @@ ja:
     terms_of_user: '利用規約'
     inquiry: 'お問い合わせ'
     reset_password: 'パスワードリセット'
+    guest_login: 'ゲストログイン'
+    guest_user: 'ゲストユーザー'
     message:
       require_login: 'ログインしてください'
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
       no_picture: '今はらんてくんがいないようです。'
+  static_pages:
+    top:
+      message: 'らんてくんをお絵描きして自慢しよう！'
+      login: 'ログインして遊ぶ'
+      index: 'みんなのらんてくんを見る'
   users:
     new:
       title: 'ユーザー登録'
@@ -37,6 +44,8 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+    guest_login:
+      success: 'ゲストとしてログインしました'
   pictures:
     new:
       width: '太さ'
@@ -55,8 +64,14 @@ ja:
       success: '投稿できました'
     index:
       title: 'ギャラリー'
+      message: 'みんなが今までに投稿してくれた歴代らんてくん達だぞ！'
+      no_result: '今はらんてくんがいないようです。'
+    show:
+      about_user: 'このらんてくんの生みの親'
+      share: 'らんてくりえーたー#RUNTEQ'
     picture:
       about_user: 'このらんてくんの生みの親'
+      guest_user: 'ゲストユーザー'
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'
@@ -82,7 +97,7 @@ ja:
     edit:
       title: 'パスワードリセット'
     create:
-      success: 'パスワードリセット手順を送信しました'
+      success: 'パスワードリセットメールを送信しました'
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
