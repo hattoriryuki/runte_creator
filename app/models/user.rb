@@ -29,6 +29,7 @@ class User < ApplicationRecord
 
   def like?(picture)
     like_pictures.include?(picture)
+  end
 
   def self.guest_login
     find_or_create_by!(email: 'guest@example.com') do |user|
