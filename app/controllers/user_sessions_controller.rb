@@ -15,4 +15,10 @@ class UserSessionsController < ApplicationController
     logout
     redirect_to root_path, notice: t('.success')
   end
+
+  def guest_login
+    @user = User.guest_login
+    auto_login(@user)
+    redirect_to root_path, notice: t('.success')
+  end
 end

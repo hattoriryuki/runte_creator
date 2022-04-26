@@ -45,7 +45,7 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-      guest_login:
+    guest_login:
       success: 'ゲストとしてログインしました'
   pictures:
     new:
@@ -84,6 +84,8 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+      user_drawn_pictures: '投稿したらんてくん'
+      user_liked_pictures: 'いいねしたらんてくん'
     edit:
       title: 'プロフィール編集'
     update:
@@ -96,7 +98,7 @@ ja:
     edit:
       title: 'パスワードリセット'
     create:
-      success: 'パスワードリセット手順を送信しました'
+      success: 'パスワードリセットメールを送信しました'
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'

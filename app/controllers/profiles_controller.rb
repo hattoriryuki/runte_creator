@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
 
   def show
     @pictures = @user.pictures
+    @like_pictures = @user.like_pictures.order(created_at: :desc)
   end
 
   def edit; end
@@ -25,5 +26,6 @@ class ProfilesController < ApplicationController
 
   def set_user
     @user = User.find(current_user.id)
+    authorize(@user, policy_class: ProfilePolicy)
   end
 end
