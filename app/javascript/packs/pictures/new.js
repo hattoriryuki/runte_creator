@@ -128,10 +128,9 @@ document.addEventListener('DOMContentLoaded',()=> {
   function changeDrawMode() {
     if (drawMode === 1) {
       drawMode = 2
-      ctx.globalCompositeOperation = 'destination-out'; // 新たな図形を描くときに適用する合成演算の種類⇨透明化
+      ctx.strokeStyle = '#FFFFFF';
       elaser.textContent  = '描画モード'
     } else {
-      ctx.globalCompositeOperation = 'source-over'; // 新たな図形をすでにあるCanvasの内容の上に描く
       drawMode = 1;
       ctx.strokeStyle = lineColor;
       elaser.textContent = '消しゴム';
