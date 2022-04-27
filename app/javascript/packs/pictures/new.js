@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded',()=> {
-  let canvas = document.getElementById('js-drawPicture');
-  let ctx = canvas.getContext('2d'); // canvas要素に2Dの描画を行うことができるようになる
+  var canvas = document.getElementById('js-drawPicture'),
+    ctx = canvas.getContext('2d'),
+    moveflg = 0,
+    Xpoint,
+    Ypoint,
+    temp = [];
+
   const canvasWidth = 1000;
   const canvasHeight = 550;
   const download = document.getElementById('js-downloadCanvas');
@@ -13,37 +18,47 @@ document.addEventListener('DOMContentLoaded',()=> {
   const lineWidth5 = document.getElementById('js-lineWidth-5')
   const lineWidth10 = document.getElementById('js-lineWidth-10')
   let lineColor = '#000000'
-  let drawJudgement = 0 // 0:白紙、 1:何かしら記入している
+  let drawJudgement = 0;
   let drawMode = 1;
-  let x = 0;
-  let y = 0;
-  let clickFlag = 0; // クリック判定 0:クリック終了、1：クリック開始、2：クリック中
-  let object = { handleEvent: DrawWithMause }; // イベントが発生するたびに呼び出される
 
-  canvas.style.border = "1px solid"; // canvas要素の枠線
+  canvas.style.border = "1px solid";
 
-  function draw(x,y) {
-    drawJudgement = 1;
-    if (clickFlag === 1) {
-      clickFlag = 2;
-      ctx.beginPath(); // 現在のパスをリセットする
-      ctx.moveTo(x,y); // パスの開始座標を指定する
-    } else {
-    ctx.lineTo(x,y); // 座業を指定してラインを引く
+  canvas.addEventListener('mousedown', startPoint, false);
+  canvas.addEventListener('mousemove', movePoint, false);
+  canvas.addEventListener('mouseup', endPoint, false);
+
+  function startPoint(e){
+    e.preventDefault();
+    ctx.beginPath();
+    let rect = e.target.getBoundingClientRect();
+    Xpoint = e.clientX - rect.left;
+    Ypoint = e.clientY - rect.top;
+    ctx.moveTo(Xpoint, Ypoint);
+  }
+
+  function movePoint(e) {
+    if (e.buttons === 1 || e.witch === 1 || e.type == 'touchmove') {
+      let rect = e.target.getBoundingClientRect();
+      Xpoint = e.clientX - rect.left;
+      Ypoint = e.clientY - rect.top;
+      moveflg = 1;
+      drawJudgement = 1;
+      ctx.lineTo(Xpoint, Ypoint);
+      ctx.lineCap = "round";
+      ctx.stroke();
     }
-    ctx.stroke(); // 現在のパスを輪郭表示する
   }
 
-  function drawStart() {
-    clickFlag = 1;
-    canvas.addEventListener('mousemove', object);
+  function endPoint(e) {
+    if (moveflg === 0) {
+      ctx.lineTo(Xpoint-1, Ypoint-1);
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+    moveflg = 0;
+    setLocalStoreage();
   }
 
-  function drawEnd() {
-    clickFlag = 0;
-    ctx.closePath();
-    canvas.removeEventListener('mousemove', object);
-  }
 
   function downloadPicture() {
     let dataURL = canvas.toDataURL();
@@ -66,17 +81,6 @@ document.addEventListener('DOMContentLoaded',()=> {
   function changeLineWidth(e) {
     ctx.lineWidth = this.width;
   }
-
-  function DrawWithMause(event) {
-    let rect = event.currentTarget.getBoundingClientRect(); // 座標情報取得
-    x = event.clientX - rect.left;
-    y = event.clientY - rect.top;
-    draw(x,y);
-  }
-
-  canvas.addEventListener('mousedown',drawStart);
-  canvas.addEventListener('mouseout', drawEnd); // 要素からカーソルが出たときに発行
-  canvas.addEventListener('mouseup', drawEnd);  // マウスのクリックを離すと発行
 
   download.addEventListener('click', downloadPicture);
 
