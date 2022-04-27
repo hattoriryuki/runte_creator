@@ -6,22 +6,28 @@ document.addEventListener('DOMContentLoaded',()=> {
     Ypoint,
     temp = [];
 
-  const canvasWidth = 1000;
-  const canvasHeight = 550;
-  const download = document.getElementById('js-downloadCanvas');
-  const pictureUpload = document.getElementById('js-pictureUpload');
-  const canvasClear = document.getElementById('js-clear');
-  const elaser = document.getElementById('js-eraser');
-  const color = document.getElementById('js-colorBox');
-  const lineWidth1 = document.getElementById('js-lineWidth-1')
-  const lineWidth3= document.getElementById('js-lineWidth-3')
-  const lineWidth5 = document.getElementById('js-lineWidth-5')
-  const lineWidth10 = document.getElementById('js-lineWidth-10')
+  const canvasWidth = 1000,
+    canvasHeight = 550,
+    download = document.getElementById('js-downloadCanvas'),
+    lineWidth1 = document.getElementById('js-lineWidth-1'),
+    lineWidth3 = document.getElementById('js-lineWidth-3'),
+    lineWidth5 = document.getElementById('js-lineWidth-5'),
+    lineWidth10 = document.getElementById('js-lineWidth-10'),
+    pictureUpload = document.getElementById('js-pictureUpload'),
+    elaser = document.getElementById('js-eraser'),
+    color = document.getElementById('js-colorBox'),
+    canvasClear = document.getElementById('js-clear'),
+    undoButton = document.getElementById('undo'),
+    redoButton = document.getElementById('redo');
+
   let lineColor = '#000000'
   let drawJudgement = 0;
   let drawMode = 1;
 
   canvas.style.border = "1px solid";
+
+  var myStorage = localStorage;
+  window.onload = initLocalStorage();
 
   canvas.addEventListener('mousedown', startPoint, false);
   canvas.addEventListener('mousemove', movePoint, false);
@@ -59,6 +65,60 @@ document.addEventListener('DOMContentLoaded',()=> {
     setLocalStoreage();
   }
 
+  function resetCanvas() {
+    drawJudgement = 0;
+    ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
+  }
+
+  function initLocalStorage(){
+    myStorage.setItem("__log", JSON.stringify([]));
+  }
+
+  function setLocalStoreage() {
+    var png = canvas.toDataURL();
+    var logs = JSON.parse(myStorage.getItem("__log"));
+
+    setTimeout(function() {
+      logs.unshift({png:png});
+      myStorage.setItem("__log", JSON.stringify(logs));
+      temp = [];
+    }, 0);
+  }
+
+  function prevCanvas() {
+    var logs = JSON.parse(myStorage.getItem("__log"));
+    if (logs.length > 0) {
+      temp.unshift(logs.shift());
+
+      setTimeout(function() {
+        myStorage.setItem("__log", JSON.stringify(logs));
+        resetCanvas();
+        draw(logs[0]['png']);
+      }, 0);
+    }
+  }
+
+  function nextCanvas() {
+    var logs = JSON.parse(myStorage.getItem("__log"));
+    if (temp.length > 0) {
+      logs.unshift(temp.shift());
+      
+      setTimeout(function() {
+        myStorage.setItem("__log", JSON.stringify(logs));
+        resetCanvas();
+        draw(logs[0]['png']);
+      }, 0);
+    }
+  }
+
+  function draw(src) {
+    var img = new Image();
+    img.src = src;
+
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+    }
+  }
 
   function downloadPicture() {
     let dataURL = canvas.toDataURL();
@@ -100,6 +160,9 @@ document.addEventListener('DOMContentLoaded',()=> {
     lineColor = color.value;
     ctx.strokeStyle = lineColor;
   });
+
+  undoButton.addEventListener('click', prevCanvas);
+  redoButton.addEventListener('click', nextCanvas);
 
   pictureUpload.addEventListener('click', ()=> {
     const comment = document.getElementById("picture_comment").value;
