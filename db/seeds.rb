@@ -21,3 +21,11 @@ end
     image: open("./app/assets/images/600x360.png")
   )
 end
+
+User.create(
+  name: "管理者ユーザー", 
+  email: "admin@example.com",
+  password: 'password',
+  password_confirmation: 'password',
+  role: 'admin'
+)
