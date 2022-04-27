@@ -56,6 +56,8 @@ ja:
       color: '色'
       eraser: '消しゴム'
       clear: '全消し'
+      undo: '戻る'
+      redo: '進む'
       complete: '完成！'
       download: 'ダウンロード'
       comment: '50文字以内で入力してください'
