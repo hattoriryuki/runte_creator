@@ -145,9 +145,12 @@ document.addEventListener('DOMContentLoaded',()=> {
   download.addEventListener('click', downloadPicture);
 
   canvasClear.addEventListener('click', ()=> {
+    if (confirm('Canvasを初期化しますか？')) {
     drawJudgement = 0;
-    ctx.clearRect(0,0, canvasWidth, canvasHeight); // 四角形の形にクリアするメソッド
+    ctx.clearRect(0,0, canvasWidth, canvasHeight);
+    }
   });
+
 
   elaser.addEventListener('click', changeDrawMode);
 
