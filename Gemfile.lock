@@ -203,6 +203,7 @@ GEM
       nested_form (~> 0.3)
       rails (>= 6.0, < 8)
       turbo-rails (~> 1.0)
+    rails_admin-i18n (1.18.0)
     railties (6.1.5)
       actionpack (= 6.1.5)
       activesupport (= 6.1.5)
@@ -302,6 +303,7 @@ DEPENDENCIES
   rails (~> 6.1.4)
   rails-i18n
   rails_admin (~> 3.0)
+  rails_admin-i18n
   rubocop
   sass-rails (>= 6)
   sorcery
