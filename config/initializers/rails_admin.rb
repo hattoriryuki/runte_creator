@@ -24,7 +24,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
-  config.main_app_name = ["らんてくりえーたー", "管理者画面"]
+  config.main_app_name = %w[らんてくりえーたー 管理者画面]
   config.parent_controller = 'ApplicationController'
   # 未ログインユーザー
   config.authenticate_with do
