@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   }
 
   function resetCanvas(){
+    drawJudgement = 0;
     ctx.fillStyle = 'rgb(255,255,255)';
     ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
   }
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   }
 
   function draw(src){
+    drawJudgement = 1;
     var img = new Image();
     img.src = src;
 
