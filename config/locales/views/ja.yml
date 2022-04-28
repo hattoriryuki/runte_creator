@@ -49,10 +49,6 @@ ja:
   pictures:
     new:
       width: '太さ'
-      width_1: '1px'
-      width_3: '3px'
-      width_5: '5px'
-      width_10: '10px'
       color: '色'
       eraser: '消しゴム'
       clear: '全消し'

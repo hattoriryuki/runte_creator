@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   function resetCanvas(){
     drawJudgement = 0;
-    ctx.fillStyle = 'rgb(255,255,255)';
+    ctx.fillStyle = bgColor;
     ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
   }
 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     }
   }
 
-  function downloadPicture() {
+  function downloadPicture(){
     let dataURL = canvas.toDataURL();
     download.href = dataURL;
   }
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded',()=> {
   elaser.addEventListener('click', changeDrawMode);
 
   canvasClear.addEventListener('click', ()=> {
-    if (confirm('Canvasを初期化しますか？')){
+    if (confirm('イラストをリセットしますか？')){
       drawJudgement = 0;
       initLocalStorage();
       temp = [];
