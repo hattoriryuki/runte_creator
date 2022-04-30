@@ -102,7 +102,9 @@ document.addEventListener('DOMContentLoaded',()=> {
       setTimeout(function(){
         myStorage.setItem("__log", JSON.stringify(logs));
         resetCanvas();
-        draw(logs[0]['png']);
+        if (logs[0]){
+          draw(logs[0]['png']);
+        }
       }, 0);
     }
   }
