@@ -172,6 +172,8 @@ document.addEventListener('DOMContentLoaded',()=> {
       initLocalStorage();
       temp = [];
       resetCanvas();
+      setBgColor();
+
     }
   });
 
