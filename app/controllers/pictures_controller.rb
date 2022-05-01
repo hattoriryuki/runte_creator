@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
   end
 
   def index
-    @pictures = Picture.all.includes(:user).order(created_at: :desc)
+    @pictures = Picture.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show
