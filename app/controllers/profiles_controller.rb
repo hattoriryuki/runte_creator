@@ -3,8 +3,8 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
   def show
-    @pictures = @user.pictures
-    @like_pictures = @user.like_pictures.order(created_at: :desc)
+    @pictures = @user.pictures.page(params[:user_page])
+    @like_pictures = @user.like_pictures.order(created_at: :desc).page(params[:like_page])
   end
 
   def edit; end
