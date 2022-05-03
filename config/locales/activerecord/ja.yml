@@ -11,6 +11,27 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード（確認）'
         avatar: 'アバター'
+        role: '権限'
+        crypted_password: '暗号化したパスワード'
+        salt: 'ソルト'
+        created_at: 作成日時
+        updated_at: '更新日時'
+        reset_password_token: 'リセットパスワードトークン'
+        reset_password_token_expires_at: 'リセットパスワードトークンの有効期限'
+        reset_password_email_sent_at: 'リセットパスワードのメール送信先'
+        access_count_to_reset_password_page: 'リセットパスワード画面のアクセス数'
+        likes: 'いいね'
+        pictures: 'イラスト'
+        like_pictures: 'いいねしたイラスト'
       picture:
+        user: 'ユーザー'
         picture_comment: '一言'
         image: 'らんてくん'
+        created_at: 作成日時
+        updated_at: '更新日時'
+        likes: 'いいね'
+      like:
+        user: 'ユーザー'
+        picture: 'イラスト'
+        created_at: 作成日時
+        updated_at: '更新日時'
