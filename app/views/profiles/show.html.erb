@@ -49,12 +49,12 @@
               <div class="hidden" id="tab-settings">
                 <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 p-5">
                   <% if @like_pictures.present? %>
-                    <%=render partial: 'users/picture', collection: @like_pictures, as: 'picture' %> 
+                    <%= render partial: 'users/picture', collection: @like_pictures, as: 'picture' %> 
                   <% else %>
                     <p class="p-6"><%= t('defaults.message.no_picture') %></p>
                   <% end %> 
                 </div>
-                <%= paginate @like_pictures, :param_name => 'like_page' %>
+                <%= paginate @like_pictures, :param_name => 'like_page', remote: true %>
               </div>
               <div class="hidden" id="tab-options">
                 <p>
