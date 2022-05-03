@@ -10,12 +10,10 @@
       <canvas class="drawPicture" id="js-drawPicture" width="1000" height="550"></canvas>
     </div>
     <div>
-      <div class="mr-8 ml-10 mt-10 widthmenu">
+      <div class="ml-10 mt-10">
         <p><%= t('.width') %></p>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-1">1px</button>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-3">3px</button>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-5">5px</button>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-10">10px</button>
+        <input id="range-selector" type="range" value="5" min="1" max="10" step="0.1">
+        <span id="line-width">5</span>
       </div>
       <div class="mt-5 ml-10 colormenu">
         <p><%= t('.color') %></p>

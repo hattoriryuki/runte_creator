@@ -9,10 +9,6 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   const canvasWidth = 1000,
     canvasHeight = 550,
-    lineWidth1 = document.getElementById('js-lineWidth-1'),
-    lineWidth3 = document.getElementById('js-lineWidth-3'),
-    lineWidth5 = document.getElementById('js-lineWidth-5'),
-    lineWidth10 = document.getElementById('js-lineWidth-10'),
     pictureUpload = document.getElementById('js-pictureUpload'),
     download = document.getElementById('js-downloadCanvas'),
     elaser = document.getElementById('js-eraser'),
@@ -23,7 +19,8 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   let lineColor = '#000000',
     drawMode = 1,
-    drawJudgement = 0;
+    drawJudgement = 0,
+    currentLineWidth = 1;
 
   canvas.style.border = "1px solid"; 
 
@@ -132,10 +129,6 @@ document.addEventListener('DOMContentLoaded',()=> {
     }
   }
 
-  function changeLineWidth(e){
-    ctx.lineWidth = this.width;
-  }
-
   function changeDrawMode(){
     if (drawMode === 1){
       drawMode = 2
@@ -154,10 +147,19 @@ document.addEventListener('DOMContentLoaded',()=> {
     download.href = dataURL;
   }
 
-  lineWidth1.addEventListener('click', { width: 1, handleEvent: changeLineWidth});
-  lineWidth3.addEventListener('click', { width: 3, handleEvent: changeLineWidth});
-  lineWidth5.addEventListener('click', { width: 5, handleEvent: changeLineWidth});
-  lineWidth10.addEventListener('click', { width: 10, handleEvent: changeLineWidth});
+  function initConfigOfLineWidth(){
+    const textForCurrentSize = document.querySelector('#line-width');
+    const rangeSelector = document.querySelector('#range-selector');
+    currentLineWidth = rangeSelector.value;
+    rangeSelector.addEventListener('input', event => {
+      const width = event.target.value;
+      currentLineWidth = width;
+      ctx.lineWidth = currentLineWidth;
+      textForCurrentSize.innerText = width;
+    });
+  }
+
+  initConfigOfLineWidth();
 
   color.addEventListener('change', ()=> {
     lineColor = color.value;
