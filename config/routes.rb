@@ -11,11 +11,14 @@ Rails.application.routes.draw do
   end
   resources :likes, only: %i[create destroy]
   resources :password_resets, only: %i[new create edit update]
-  
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
   post 'guest', to: 'user_sessions#guest_login'
 
+  post 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/callback', to: 'oauths#callback'
+  get 'oauth/:provider', to: 'oauths#oauth', as: :auth_at_provider
 end
