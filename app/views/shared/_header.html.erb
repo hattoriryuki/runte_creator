@@ -14,8 +14,8 @@
 	    display: block;
   }
   </style>
-
-  <div class="dropdown inline-block relative ">
+<div class="text-right">
+  <div class="dropdown inline-block relative">
     <button class="md:ml-auto flex-wrap flex items-center block p-2 bg-white bg-gray-100 items-right rounded-md w-44">
       <% if current_user.general? || current_user.admin? %>
         <span class="mr-4"><%= current_user.name %></span>
