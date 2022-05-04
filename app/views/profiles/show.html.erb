@@ -4,18 +4,18 @@
     <div class="flex flex-col items-center mb-4 gap-4 md:gap-6">
       <div class="flex flex-col sm:flex-row items-center gap-10">
         <div class="w-24 md:w-32 h-24 md:h-32 bg-gray-100 rounded-full overflow-hidden shadow-lg">
-          <%= image_tag  @user.avatar_url, class:"w-full h-full object-cover object-center"%>
+          <%= image_tag  @user.avatar_url, class: "w-full h-full object-cover object-center" %>
         </div>
         <div class="font-bold">
           <div class="text-1xl pb-3">
-            <%="EMAIL:"%><a class="text-2xl text-indigo-500"><%= @user.email %></a>
+            <%= "EMAIL:" %><a class="text-2xl text-indigo-500"><%= @user.email %></a>
           </div>
           <div class="text-1xl">
-            <%="NAME:"%><a class="text-2xl text-indigo-500"><%= @user.name %></a>
+            <%= "NAME:" %><a class="text-2xl text-indigo-500"><%= @user.name %></a>
           </div>
         </div>
         <div>
-          <%= link_to "編集", edit_profile_path, class: "inline-block bg-gray-500 hover:bg-gray-600 active:bg-gray-700 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
+          <%= link_to t(".edit"), edit_profile_path, class: "inline-block bg-gray-500 hover:bg-gray-600 active:bg-gray-700 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@
               <div class="block" id="tab-profile">
                 <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 p-5">
                   <% if @pictures.present? %>
-                    <%=render partial: 'users/picture', collection: @pictures, as: 'picture' %> 
+                    <%= render partial: 'users/picture', collection: @pictures, as: 'picture' %> 
                   <% else %>
                     <p class="p-6"><%= t('defaults.message.no_picture') %></p>
                   <% end %> 

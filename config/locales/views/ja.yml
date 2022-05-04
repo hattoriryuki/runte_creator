@@ -85,6 +85,7 @@ ja:
       title: 'プロフィール'
       user_drawn_pictures: '投稿したらんてくん'
       user_liked_pictures: 'いいねしたらんてくん'
+      edit: '編集'
     edit:
       title: 'プロフィール編集'
     update:
