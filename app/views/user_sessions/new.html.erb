@@ -23,5 +23,6 @@
       <%= link_to  t('.password_forget'),new_password_reset_path %>
     </div>
   <% end %>
+      <%= link_to t('.login_with_twitter'), auth_at_provider_path(provider: :twitter) %>
 </div>
 
