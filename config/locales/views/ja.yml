@@ -45,6 +45,8 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  oauths:
+    success: 'twitterでログインしました'
     guest_login:
       success: 'ゲストとしてログインしました'
   pictures:
