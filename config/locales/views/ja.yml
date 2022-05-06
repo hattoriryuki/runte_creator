@@ -13,6 +13,9 @@ ja:
     reset_password: 'パスワードリセット'
     guest_login: 'ゲストログイン'
     guest_user: 'ゲストユーザー'
+    privacy: 'プライバシーポリシー'
+    teams: '利用規約'
+    contact: 'お問い合わせ'
     message:
       require_login: 'ログインしてください'
       updated: '%{item}を更新しました'
