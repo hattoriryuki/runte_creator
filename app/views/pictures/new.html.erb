@@ -10,12 +10,10 @@
       <canvas class="drawPicture" id="js-drawPicture" width="1000" height="550"></canvas>
     </div>
     <div>
-      <div class="mr-8 ml-10 mt-10 widthmenu">
+      <div class="ml-10 mt-10">
         <p><%= t('.width') %></p>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-1"><%= t('.width_1') %></button>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-3"><%= t('.width_3') %></button>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-5"><%= t('.width_5') %></button>
-        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-lineWidth-10"><%= t('.width_10') %></button>
+        <input id="range-selector" type="range" value="5" min="1" max="10" step="0.1">
+        <span id="line-width">5</span>
       </div>
       <div class="mt-5 ml-10 colormenu">
         <p><%= t('.color') %></p>
@@ -24,6 +22,10 @@
       <div class="mt-5 ml-10 drawmenu">
         <button class="eraser bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-eraser"><%= t('.eraser') %></button>
         <button class="clear bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="js-clear"><%= t('.clear') %></button>
+      </div>
+      <div class="mt-10 ml-10">
+        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="undo"><%= t('.undo') %></button>  
+        <button class="bg-indigo-700 font-semibold text-white py-1 px-3 rounded" id="redo"><%= t('.redo') %></button>  
       </div>
       <div class="form-group ml-10 mt-10">
         <label><%= Picture.human_attribute_name(:picture_comment) %></label>
@@ -36,3 +38,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "pictures/new.js" %>
