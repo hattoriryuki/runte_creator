@@ -294,6 +294,7 @@ DEPENDENCIES
   byebug
   carrierwave
   jbuilder (~> 2.7)
+  kaminari
   letter_opener_web (~> 1.0)
   listen (~> 3.3)
   pg (~> 1.1)

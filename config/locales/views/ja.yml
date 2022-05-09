@@ -19,6 +19,12 @@ ja:
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
       no_picture: '今はらんてくんがいないようです。'
+    pagination:
+      first: '最初'
+      last: '最後'
+      previous: '前'
+      next: '次'
+      truncate: '...'
   static_pages:
     top:
       message: 'らんてくんをお絵描きして自慢しよう！'
@@ -86,6 +92,7 @@ ja:
       title: 'プロフィール'
       user_drawn_pictures: '投稿したらんてくん'
       user_liked_pictures: 'いいねしたらんてくん'
+      edit: '編集'
     edit:
       title: 'プロフィール編集'
     update:

@@ -1,0 +1,4 @@
+<div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 p-5">
+  <%= render partial: 'users/picture', collection: @like_pictures, as: 'picture' %> 
+</div>
+<%= paginate @like_pictures, :param_name => 'like_page', remote: true %>
