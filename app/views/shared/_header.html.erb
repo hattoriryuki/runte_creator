@@ -1,16 +1,33 @@
-<header class="text-gray-600 body-font">
+<header class="bg-gray800 text-gray-600 body-font">
+  <%= javascript_pack_tag 'navbar' %>
   <div class="container mx-auto flex flex-wrap p-5 flex-coll md:flex-row items-center">
     <%= link_to root_path, class: 'flex items-center mb-4 md:mb-0' do %>
       <%= image_tag 'runte_creator_logo.png', size: '300x60' %>
     <% end %>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <%= link_to t('defaults.gallary'), pictures_path, class: 'mr-5 hover:text-gray-900' %>
-      <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-gray-900'  %>
-      <div class="w-10 h-10 rounded-full">
+      <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-gray-900' %>
+      
+      <div id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500">
         <%= image_tag current_user.avatar_url, class: 'w-full h-full object-cover object-center' %>
       </div>
-      <%= link_to t('defaults.my_page'), profile_path, class: 'mr-5 hover:text-gray-900' %>
-      <%= link_to t('defaults.logout'), logout_path, method: :delete, class: 'mr-5 hover:text-gray-900'  %>
+      <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
+        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+          <% if current_user.general? || current_user.admin? %>
+            <span class="font-medium mr-4"><%= current_user.name %></span>
+          <% else %>
+            <span class="font-medium mr-4"><%= t('defaults.guest_user') %></span>
+          <% end %>
+        </div>
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+          <li>
+            <%= link_to t('defaults.my_page'), profile_path, class: 'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white' %>
+          </li>
+          <li>
+            <%= link_to t('defaults.logout'), logout_path, method: :delete, class: 'block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white' %>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
