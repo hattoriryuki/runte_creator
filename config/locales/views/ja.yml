@@ -19,15 +19,23 @@ ja:
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
       no_picture: '今はらんてくんがいないようです。'
+    pagination:
+      first: '最初'
+      last: '最後'
+      previous: '前'
+      next: '次'
+      truncate: '...'
   static_pages:
     top:
       message: 'らんてくんをお絵描きして自慢しよう！'
       login: 'ログインして遊ぶ'
       index: 'みんなのらんてくんを見る'
+      start: 'お絵描きスタート！!'
   users:
     new:
       title: 'ユーザー登録'
       to_login_page: 'ログインページへ'
+      login_with_twitter: 'Twitterでログイン'
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
@@ -44,18 +52,18 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  oauths:
+    success: 'twitterでログインしました'
     guest_login:
       success: 'ゲストとしてログインしました'
   pictures:
     new:
       width: '太さ'
-      width_1: '1px'
-      width_3: '3px'
-      width_5: '5px'
-      width_10: '10px'
       color: '色'
       eraser: '消しゴム'
       clear: '全消し'
+      undo: '戻る'
+      redo: '進む'
       complete: '完成！'
       download: 'ダウンロード'
       comment: '50文字以内で入力してください'
@@ -85,6 +93,7 @@ ja:
       title: 'プロフィール'
       user_drawn_pictures: '投稿したらんてくん'
       user_liked_pictures: 'いいねしたらんてくん'
+      edit: '編集'
     edit:
       title: 'プロフィール編集'
     update:
