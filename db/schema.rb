@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2022_05_03_032211) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "avatar"
     t.integer "role", default: 0, null: false
+    t.string "avatar"
     t.string "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
