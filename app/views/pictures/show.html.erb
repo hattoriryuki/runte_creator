@@ -1,3 +1,8 @@
+<% set_meta_tags(og: { title: "#{ @picture.user.name }さんが描いたらんてくんです",
+  description: "test",
+  image: 'data: image/png;base64,' + @picture.image },
+  twitter: { card: 'summary_large_image' }) %>
+
 <section class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-10 items-center justify-center flex-col">
     <%= image_tag 'data:image/png;base64,' + @picture.image, class: 'lg:w-2/6 md:w-3/6 w-5/6 mb-5 object-cover object-center rounded' %>
