@@ -3,14 +3,14 @@
   <head>
     <title>RunteCreator</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%#= display_meta_tags(default_meta_tags) %>
+    <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_pack_tag 'application',  media: 'all' %>
     <%= javascript_pack_tag 'application' %>
 
-    <% twitter_card = get_twitter_card_info(@page ? @page : nil) %>
+    <%# twitter_card = get_twitter_card_info(@page ? @page : nil) %>
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
