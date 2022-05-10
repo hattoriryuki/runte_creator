@@ -14,7 +14,7 @@ module ApplicationHelper
         description: 'RunteCreator',
         type: 'website',
         url: [request.original_url, 'http://127.0.0.1:3000'],
-        image: image_url('04_a.png'),
+        image: 'https://runte-creator.com/img/runtekun_01.png',
         locale: "ja_JP"
       },
       twitter: {
