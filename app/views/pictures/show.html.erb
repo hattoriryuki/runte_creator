@@ -23,4 +23,7 @@
     </div>
   </div>
 </section>
-
+<% set_meta_tags(og: { title: "#{@picture.user.name}さんが描いたらんてくん！",
+  description: "あなただけのらんてくんを描いてみよう",
+  image: asset_url('runtekun_01.png') },
+  twitter: { card: 'summary_large_image' }) %>
