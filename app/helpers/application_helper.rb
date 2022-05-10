@@ -14,13 +14,13 @@ module ApplicationHelper
         description: 'RunteCreator',
         type: 'website',
         url: [request.original_url, 'http://127.0.0.1:3000'],
-        image: 'https://runte-creator.com/img/runtekun_01.jpg',
+        image: asset_url('04_a.png'),
         locale: "ja_JP"
       },
       twitter: {
         site: '@runtecreator',
         card: 'summary_large_image',
-        image: 'https://runte-creator.com/img/runtekun_01.jpg'
+        image: asset_url('04_a.png')
       },
     }
   end
