@@ -36,7 +36,8 @@ module ApplicationHelper
       twitter_card[:url] = 'https://runte-creator.herokuapp.com/'
       twitter_card[:title] = 'RunteCreator'
       twitter_card[:description] = '勉強で行き詰まった時にらんてくんを描いて、やすらぎと笑いを与え、現実逃避できるサービスです'
-      twitter_card[:image] = asset_url('04_a.png')
+      # twitter_card[:image] = asset_url('04_a.png')
+      twitter_card[:image] = @picture.image
     end
     twitter_card[:card] = 'summary_large_image'
     twitter_card[:site] = '@runte_creator'
