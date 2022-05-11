@@ -24,6 +24,11 @@ class PicturesController < ApplicationController
     @like_pictures = current_user.like_pictures.include(:user).order(created_at: :desc)
   end
 
+  def show_image
+    @picture = Picture.find(params[:id])
+    render :layout => false
+  end
+
   private
 
   def picture_params

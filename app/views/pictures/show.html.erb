@@ -1,9 +1,9 @@
 <section class="text-gray-600 body-font">
 <% set_meta_tags(og: { title: "#{@picture.user.name}さんが描いたらんてくん！",
   description: "あなただけのらんてくんを描いてみよう",
-  image: asset_url('runtekun_01.png') },
+  image: 'https://runte-creator.herokuapp.com/pictures/show_image/1' },
   twitter: { card: 'summary',
-  image: asset_url('runtekun_01.png') }) %>
+  image: 'https://runte-creator.herokuapp.com/pictures/show_image/1' }) %>
 
   <div class="text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12">
     <%= image_tag 'data:image/png;base64,' + @picture.image, class: 'lg:w-2/6 md:w-3/6 w-5/6 mb-5 object-cover object-center rounded' %>
@@ -29,4 +29,4 @@
     </div>
   </div>
 </section>
-
+<%#= javascript_pack_tag "pictures/show.js" %>
