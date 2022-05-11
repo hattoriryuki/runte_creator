@@ -8,6 +8,6 @@ class Picture < ApplicationRecord
   scope :recent, -> { order(id: :desc).limit(4) }
 
   def image_url
-    "/pictures/show_image/#{self.id}.png"
+    "https://runte-creator.herokuapp.com/pictures/show_image/#{self.id}.png"
   end
 end
