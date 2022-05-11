@@ -8,6 +8,6 @@ class Picture < ApplicationRecord
   scope :recent, -> { order(id: :desc).limit(4) }
 
   def image_url
-    "/pictures/image/#{self.id}.png"
+    "/pictures/show_image/#{self.id}.png"
   end
 end

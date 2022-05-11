@@ -18,6 +18,9 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+
+    # @picture.parse_base64(params[:image])
+    # render json: @picture, status: :created, location: @picture
   end
 
   def likes
@@ -25,8 +28,16 @@ class PicturesController < ApplicationController
   end
 
   def show_image
-    @picture = Picture.find(params[:id])
-    render :layout => false
+    picture = Picture.find(params[:id])
+    filename = "#{picture.id}.png"
+
+    send_data(picture.image,
+      type: 'image/png',
+      filename: filename,
+      disposition: 'inline'
+    )
+
+    # render :layout => false
   end
 
   private
