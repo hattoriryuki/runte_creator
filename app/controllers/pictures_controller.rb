@@ -28,16 +28,9 @@ class PicturesController < ApplicationController
   end
 
   def show_image
-    picture = Picture.find(params[:id])
-    filename = "#{picture.id}.png"
+    @picture = Picture.find(params[:id])
 
-    send_data(picture.image,
-      type: 'image/png',
-      filename: filename,
-      disposition: 'inline'
-    )
-
-    # render :layout => false
+    render :layout => false
   end
 
   private
