@@ -19,3 +19,8 @@
   </div>
 </section>
 
+<% set_meta_tags(og: { title: "#{ @picture.user.name }さんが描いたらんてくん！",
+  description: "あなただけのらんてくんを描いてみよう",
+  image: asset_url('04_a.png') },
+  twitter: { card: 'summary_large_image',
+  image: asset_url('04_a.png') }) %>
