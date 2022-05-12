@@ -19,8 +19,8 @@ class PicturesController < ApplicationController
   def show
     @picture = Picture.find(params[:id])
 
-    # @picture.parse_base64(params[:image])
-    # render json: @picture, status: :created, location: @picture
+    @picture.parse_base64(params[:image])
+    render json: @picture, status: :created, location: @picture
   end
 
   def likes
