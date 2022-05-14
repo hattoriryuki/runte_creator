@@ -16,17 +16,22 @@
       </div>
     </div>
     <div class="text-center pt-5">
-      <%= f.submit t('defaults.login'), class:"inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
+      <%= f.submit t('defaults.login'), class:"inline-block bg-runte-purple hover:bg-indigo-700 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
     </div>
     <div class="text-center p-6">
       <%= link_to t('.to_register_page'), new_user_path %>
       <%= link_to  t('.password_forget'),new_password_reset_path %>
     </div>
   <% end %>
-    <div class="flex justify-center border-t border-gray-200">
+  <div class="grid grid-cols-8 border-t border-gray-200">
+    <div class="flex justify-center col-start-4">
       <%= link_to auth_at_provider_path( provider: :twitter ), class: "text-white bg-blue-400 hover:bg-blue-500 font-semibond rounded-lg text-sm px-5 py-3 text-center inline-flex items-center mr-2 mb-2 mt-4" do %>
         <span><i class="fab fa-twitter"></i><%= t('.login_with_twitter') %></span>
       <% end %>
     </div>
+    <div class="flex justify-center col-start-5">
+      <%= link_to t('defaults.guest_login'), guest_path, class: "text-white bg-runte-purple hover:bg-indigo-700 active:bg-indigo-700 focus-visible:ring ring-indigo-300 font-medium rounded-lg text-base px-5 py-2.5 text-center mr-2 mb-2 mt-4", method: :post %>
+    </div>
+  </div>
 </div>
 
