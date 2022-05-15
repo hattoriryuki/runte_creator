@@ -12,6 +12,7 @@
     "postcss": "8",
     "postcss-loader": "4",
     "rails_admin": "3.0.0",
+    "swiper": "^8.1.4",
     "tailwindcss": "2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
