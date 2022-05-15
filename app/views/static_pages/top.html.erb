@@ -9,7 +9,7 @@
       </div>
       <% if @pictures.present? %>
         <div class="swiper">
-        <div class="text-gray-600 text-center text-xl">みんなのらんてくん</div>
+        <div class="text-gray-600 text-center text-xl"><%= t('.post') %></div>
           <div class="swiper-wrapper">
             <%= render partial: 'users/toppicture', collection: @pictures, as: 'picture' %>
           </div>

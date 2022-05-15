@@ -35,6 +35,7 @@ ja:
       index: 'みんなのらんてくんを見る'
       start: 'はじめる'
       drawing: 'お絵描きスタート！！'
+      post: 'みんなのらんてくん'
   users:
     new:
       title: 'ユーザー登録'

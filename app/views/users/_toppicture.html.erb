@@ -1,3 +1,5 @@
 <div class="swiper-slide">
-  <%= image_tag "data:image/png;base64," + picture.image, size:'600x360' %>
+  <%= link_to picture_path(picture) do %>
+    <%= image_tag "data:image/png;base64," + picture.image, size:'600x360' %>
+  <% end %>
 </div>
