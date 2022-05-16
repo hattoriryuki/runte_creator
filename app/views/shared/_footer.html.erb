@@ -1,3 +1,10 @@
-<footer class="bg-runte-orange">
-  <p class="p-2 text-center text-xs text-white">Copyright © 2022 らんてくりえーたー All Rights Reserved.</p>
+<footer class="bg-runte-orange text-xs text-white">
+  <div class="flex flex-col items-center p-2">
+    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+      <%= link_to t("defaults.teams"), page_path('teams') %>
+      <%= link_to t("defaults.privacy"), page_path('privacy_policy') %>
+      <%= link_to t("defaults.contact"), 'https://twitter.com/runtecreator' ,target:'_blank' %>
+    </div>
+  </div>
+  <p class="p-1 text-center">Copyright © 2022 らんてくりえーたー All Rights Reserved.</p>
 </footer>

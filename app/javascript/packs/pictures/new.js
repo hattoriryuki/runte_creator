@@ -1,105 +1,192 @@
 document.addEventListener('DOMContentLoaded',()=> {
-  let canvas = document.getElementById('js-drawPicture');
-  let ctx = canvas.getContext('2d'); // canvas要素に2Dの描画を行うことができるようになる
-  const canvasWidth = 1000;
-  const canvasHeight = 550;
-  const download = document.getElementById('js-downloadCanvas');
-  const pictureUpload = document.getElementById('js-pictureUpload');
-  const canvasClear = document.getElementById('js-clear');
-  const elaser = document.getElementById('js-eraser');
-  const color = document.getElementById('js-colorBox');
-  const lineWidth1 = document.getElementById('js-lineWidth-1')
-  const lineWidth3= document.getElementById('js-lineWidth-3')
-  const lineWidth5 = document.getElementById('js-lineWidth-5')
-  const lineWidth10 = document.getElementById('js-lineWidth-10')
-  let lineColor = '#000000'
-  let drawJudgement = 0 // 0:白紙、 1:何かしら記入している
-  let drawMode = 1;
-  let x = 0;
-  let y = 0;
-  let clickFlag = 0; // クリック判定 0:クリック終了、1：クリック開始、2：クリック中
-  let object = { handleEvent: DrawWithMause }; // イベントが発生するたびに呼び出される
+  var canvas = document.getElementById('js-drawPicture'),
+    ctx = canvas.getContext('2d'),
+    moveflg = 0,
+    Xpoint,
+    Ypoint,
+    temp = [],
+    bgColor = 'rgb(255,255,255)';
 
-  canvas.style.border = "1px solid"; // canvas要素の枠線
+  const canvasWidth = 1000,
+    canvasHeight = 550,
+    pictureUpload = document.getElementById('js-pictureUpload'),
+    download = document.getElementById('js-downloadCanvas'),
+    elaser = document.getElementById('js-eraser'),
+    color = document.getElementById('js-colorBox'),
+    canvasClear = document.getElementById('js-clear'),
+    undoButton = document.getElementById('undo'),
+    redoButton = document.getElementById('redo');
 
-  function draw(x,y) {
-    drawJudgement = 1;
-    if (clickFlag === 1) {
-      clickFlag = 2;
-      ctx.beginPath(); // 現在のパスをリセットする
-      ctx.moveTo(x,y); // パスの開始座標を指定する
-    } else {
-    ctx.lineTo(x,y); // 座業を指定してラインを引く
+  let lineColor = '#000000',
+    drawMode = 1,
+    drawJudgement = 0,
+    currentLineWidth = 1;
+
+  canvas.style.border = "1px solid"; 
+
+  setBgColor();
+
+  var myStorage = localStorage;
+  window.onload = initLocalStorage();
+
+  canvas.addEventListener('mousedown', startPoint, false);
+  canvas.addEventListener('mousemove', movePoint, false);
+  canvas.addEventListener('mouseup', endPoint, false);
+
+  function setBgColor(){
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+  }
+
+  function startPoint(e){
+    e.preventDefault();
+    ctx.beginPath();
+    let rect = e.target.getBoundingClientRect();
+    Xpoint = e.clientX - rect.left;
+    Ypoint = e.clientY - rect.top;
+    ctx.moveTo(Xpoint, Ypoint);
+  }
+
+  function movePoint(e){
+    if (e.buttons === 1 || e.witch === 1 || e.type == 'touchmove'){
+      let rect = e.target.getBoundingClientRect();
+      Xpoint = e.clientX - rect.left;
+      Ypoint = e.clientY - rect.top;
+      moveflg = 1;
+      drawJudgement = 1;
+      ctx.lineTo(Xpoint, Ypoint);
+      ctx.lineCap = "round";
+      ctx.stroke();
     }
-    ctx.stroke(); // 現在のパスを輪郭表示する
   }
 
-  function drawStart() {
-    clickFlag = 1;
-    canvas.addEventListener('mousemove', object);
+  function endPoint(e){
+    if (moveflg === 0){
+      ctx.lineTo(Xpoint-1, Ypoint-1);
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+    moveflg = 0;
+    setLocalStoreage();
   }
 
-  function drawEnd() {
-    clickFlag = 0;
-    ctx.closePath();
-    canvas.removeEventListener('mousemove', object);
+  function resetCanvas(){
+    drawJudgement = 0;
+    ctx.fillStyle = bgColor;
+    ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
   }
 
-  function downloadPicture() {
-    let dataURL = canvas.toDataURL();
-    download.href = dataURL;
+  function initLocalStorage(){
+    myStorage.setItem("__log", JSON.stringify([]));
   }
 
-  function changeDrawMode() {
-    if (drawMode === 1) {
+  function setLocalStoreage(){
+    var png = canvas.toDataURL();
+    var logs = JSON.parse(myStorage.getItem("__log"));
+
+    setTimeout(function(){
+      logs.unshift({png:png});
+      myStorage.setItem("__log", JSON.stringify(logs));
+      temp = [];
+    }, 0);
+  }
+
+  function prevCanvas(){
+    var logs = JSON.parse(myStorage.getItem("__log"));
+    if (logs.length > 0){
+      temp.unshift(logs.shift());
+
+      setTimeout(function(){
+        myStorage.setItem("__log", JSON.stringify(logs));
+        resetCanvas();
+        if (logs[0]){
+          draw(logs[0]['png']);
+        }
+      }, 0);
+    }
+  }
+
+  function nextCanvas(){
+    var logs = JSON.parse(myStorage.getItem("__log"));
+    if (temp.length > 0){
+      logs.unshift(temp.shift());
+      
+      setTimeout(function(){
+        myStorage.setItem("__log", JSON.stringify(logs));
+        resetCanvas();
+        draw(logs[0]['png']);
+      }, 0);
+    }
+  }
+
+  function draw(src){
+    drawJudgement = 1;
+    var img = new Image();
+    img.src = src;
+
+    img.onload = function(){
+        ctx.drawImage(img, 0, 0);
+    }
+  }
+
+  function changeDrawMode(){
+    if (drawMode === 1){
       drawMode = 2
-      ctx.globalCompositeOperation = 'destination-out'; // 新たな図形を描くときに適用する合成演算の種類⇨透明化
+      ctx.strokeStyle = '#FFFFFF';
       elaser.textContent  = '描画モード'
     } else {
-      ctx.globalCompositeOperation = 'source-over'; // 新たな図形をすでにあるCanvasの内容の上に描く
+      ctx.globalCompositeOperation = 'source-over'; 
       drawMode = 1;
       ctx.strokeStyle = lineColor;
       elaser.textContent = '消しゴム';
     }
   }
 
-  function changeLineWidth(e) {
-    ctx.lineWidth = this.width;
+  function downloadPicture(){
+    let dataURL = canvas.toDataURL();
+    download.href = dataURL;
   }
 
-  function DrawWithMause(event) {
-    let rect = event.currentTarget.getBoundingClientRect(); // 座標情報取得
-    x = event.clientX - rect.left;
-    y = event.clientY - rect.top;
-    draw(x,y);
+  function initConfigOfLineWidth(){
+    const textForCurrentSize = document.querySelector('#line-width');
+    const rangeSelector = document.querySelector('#range-selector');
+    currentLineWidth = rangeSelector.value;
+    rangeSelector.addEventListener('input', event => {
+      const width = event.target.value;
+      currentLineWidth = width;
+      ctx.lineWidth = currentLineWidth;
+      textForCurrentSize.innerText = width;
+    });
   }
 
-  canvas.addEventListener('mousedown',drawStart);
-  canvas.addEventListener('mouseout', drawEnd); // 要素からカーソルが出たときに発行
-  canvas.addEventListener('mouseup', drawEnd);  // マウスのクリックを離すと発行
-
-  download.addEventListener('click', downloadPicture);
-
-  canvasClear.addEventListener('click', ()=> {
-    drawJudgement = 0;
-    ctx.clearRect(0,0, canvasWidth, canvasHeight); // 四角形の形にクリアするメソッド
-  });
-
-  elaser.addEventListener('click', changeDrawMode);
-
-  lineWidth1.addEventListener('click', { width: 1, handleEvent: changeLineWidth});
-  lineWidth3.addEventListener('click', { width: 3, handleEvent: changeLineWidth});
-  lineWidth5.addEventListener('click', { width: 5, handleEvent: changeLineWidth});
-  lineWidth10.addEventListener('click', { width: 10, handleEvent: changeLineWidth});
+  initConfigOfLineWidth();
 
   color.addEventListener('change', ()=> {
     lineColor = color.value;
     ctx.strokeStyle = lineColor;
   });
 
+  elaser.addEventListener('click', changeDrawMode);
+
+  canvasClear.addEventListener('click', ()=> {
+    if (confirm('イラストをリセットしますか？')){
+      drawJudgement = 0;
+      initLocalStorage();
+      temp = [];
+      resetCanvas();
+      setBgColor();
+
+    }
+  });
+
+  undoButton.addEventListener('click', prevCanvas);
+  redoButton.addEventListener('click', nextCanvas);
+
+  download.addEventListener('click', downloadPicture);
+
   pictureUpload.addEventListener('click', ()=> {
     const comment = document.getElementById("picture_comment").value;
-    if (drawJudgement === 0) {
+    if (drawJudgement === 0){
       window.alert('何か記入してください')
     } else {
       canvas.toBlob((blob) => {
@@ -108,7 +195,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         const token = document.getElementsByName("csrf-token")[0].content;
         reader.readAsDataURL(blob);
 
-        reader.onload = async function() {
+        reader.onload = async function(){
           let dataUrlBase64 = reader.result;
           let base64 = dataUrlBase64.replace(/data:.*\/.*;base64,/, '');
           formData.append("picture[image]", base64);
@@ -120,7 +207,7 @@ document.addEventListener('DOMContentLoaded',()=> {
           });
           if (comment.length <= 50){
           window.location.replace('/pictures');
-          }else{
+          } else {
             document.getElementById("js-flash-notice").classList.remove("hidden");
           }
         }
