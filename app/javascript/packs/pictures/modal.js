@@ -1,8 +1,9 @@
+window.Cookies = require("js-cookie")
 $(function(){
-  $('.js-modal').fadeIn();
-  return false;
+  $('.js-modal').show();
+  Cookies.get('btnFlg') == 'on'?$('.js-modal').hide():$('.js-modal').show();
+  setTimeout(function(){
+    $('.js-modal').fadeOut();
+    Cookies.set('btnFlg', 'on', { expires: 30,path: '/' });
+  }, 1500);
 });
-
-setTimeout(function(){
-  $('.js-modal').fadeOut();
-},1500);
