@@ -9,6 +9,7 @@
     "@rails/webpacker": "5.4.3",
     "autoprefixer": "10",
     "jquery": "^3.6.0",
+    "js-cookie": "^3.0.1",
     "postcss": "8",
     "postcss-loader": "4",
     "rails_admin": "3.0.0",
