@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :loading_image, only: %i[index]
+
   def new
     @picture = Picture.new
   end
