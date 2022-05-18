@@ -18,12 +18,12 @@
       </div>
     </div>
 
-        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-          <% if @pictures.present? %>
-            <%= render partial: 'users/toppicture', collection: @pictures, as: 'picture' %>
-          <% else %>
-            <p><%= t('.no_result') %></p>
-          <% end %>
-        </div>    
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <% if @pictures.present? %>
+        <%= render partial: 'users/toppicture', collection: @pictures, as: 'picture' %>
+      <% else %>
+        <p><%= t('defaults.message.no_picture') %></p>
+      <% end %>
+    </div>    
   </div>
 </div>
