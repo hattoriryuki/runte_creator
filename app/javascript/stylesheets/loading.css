@@ -1,0 +1,44 @@
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #fff;
+  text-align: center;
+}
+#loading_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#loading .kvArea {
+  width: 30%;
+}
+#loading .kvArea .img_box {
+  text-align: center;
+}
+#loading .kvArea .img_box img {
+  max-width: 100%;
+  height: auto;
+}
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1.2s;
+  animation-delay: 1.2s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+@keyframes fadeUpAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
