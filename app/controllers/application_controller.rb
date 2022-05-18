@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
 
   def loading_image
     random_picture = Picture.pluck(:id).shuffle.first
-    @random_picture = Picture.find(random_picture)
+    @random_picture = Picture.find(random_picture) if random_picture
   end
 end

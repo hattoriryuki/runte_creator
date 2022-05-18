@@ -1,8 +1,12 @@
 <div id="loading">
   <div class="kvArea" id="loading_logo">
     <div class="img_box">
-      <div class="inline-flex py-6 text-xl text-gray-600 fadeUp"><%= @random_picture.user.name %>さんが描いたらんてくん</div>
-      <%= image_tag 'data:image/png;base64,' + @random_picture.image, class: 'fadeUp w-full h-full object-cover object-center border' %>
+      <% if @random_picture %>
+        <div class="inline-flex py-6 text-xl text-gray-600 fadeUp"><%= @random_picture.user.name %>さんが描いたらんてくん</div>
+        <%= image_tag 'data:image/png;base64,' + @random_picture.image, class: 'fadeUp w-full h-full object-cover object-center border' %>
+      <% else %>
+        <%= image_tag 'runte_creator_logo.png' %>
+      <% end %>
       <div class="inline-flex py-6 text-xl text-gray-600 fadeUp">Now Loading...</div>
     </div>
   </div>
