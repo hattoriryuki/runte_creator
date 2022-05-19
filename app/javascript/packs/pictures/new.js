@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   setBgColor();
 
+  ctx.lineWidth = 5;
+
   var myStorage = localStorage;
   window.onload = initLocalStorage();
 
