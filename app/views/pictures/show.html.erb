@@ -1,10 +1,4 @@
 <section class="text-gray-600 body-font">
-<% set_meta_tags(og: { title: "#{@picture.user.name}さんが描いたらんてくん！",
-  description: "あなただけのらんてくんを描いてみよう",
-  image: image_url(@picture.image_url) },
-  twitter: { card: 'summary',
-  image: image_url(@picture.image_url) }) %>
-
   <div class="text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12">
     <%= image_tag 'data:image/png;base64,' + @picture.image, class: 'lg:w-2/6 md:w-3/6 w-5/6 mb-5 object-cover object-center rounded' %>
     <div class="text-center lg:w-2/3 w-full">

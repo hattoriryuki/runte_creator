@@ -18,19 +18,10 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
-
-    @picture.parse_base64(params[:image])
-    render json: @picture, status: :created, location: @picture
   end
 
   def likes
     @like_pictures = current_user.like_pictures.include(:user).order(created_at: :desc)
-  end
-
-  def show_image
-    @picture = Picture.find(params[:id])
-
-    render :layout => false
   end
 
   private
