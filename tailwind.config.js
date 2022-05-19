@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         accent: '#FFB600',
+        twitter: '#1DA1F2',
       }
     },
   },
