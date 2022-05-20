@@ -78,6 +78,7 @@ ja:
       message: 'みんなが今までに投稿してくれた歴代らんてくん達だぞ！'
       no_result: '今はらんてくんがいないようです。'
     show:
+      title: 'イラスト詳細'
       about_user: 'このらんてくんの生みの親'
       share: 'らんてくりえーたー#RUNTEQ'
     picture:
