@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def loading_image
-    random_picture = Picture.pluck(:id).shuffle.first
-    @random_picture = Picture.find(random_picture) if random_picture
+    @random_picture = Picture.all.shuffle.first if Picture.exists?
   end
 end
