@@ -12,7 +12,6 @@ ja:
     inquiry: 'お問い合わせ'
     reset_password: 'パスワードリセット'
     guest_login: 'ゲストログイン'
-    guest_user: 'ゲストユーザー'
     privacy: 'プライバシーポリシー'
     teams: '利用規約'
     contact: 'お問い合わせ'
@@ -82,7 +81,6 @@ ja:
       share: 'らんてくりえーたー#RUNTEQ'
     picture:
       about_user: 'このらんてくんの生みの親'
-      guest_user: 'ゲストユーザー'
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'

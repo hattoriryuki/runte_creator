@@ -12,11 +12,7 @@
       </div>
       <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-          <% if current_user.general? || current_user.admin? %>
-            <span class="font-medium mr-4"><%= current_user.name %></span>
-          <% else %>
-            <span class="font-medium mr-4"><%= t('defaults.guest_user') %></span>
-          <% end %>
+          <span class="font-medium mr-4"><%= current_user.name %></span>
         </div>
         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
           <li>
