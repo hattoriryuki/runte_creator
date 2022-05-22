@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   resources :likes, only: %i[create destroy]
   resources :password_resets, only: %i[new create edit update]
 
-  get 'pictures/show_image/:id', to: 'pictures#show_image', constraints: { format: /png/ }
-
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
