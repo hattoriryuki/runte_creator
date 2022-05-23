@@ -1,5 +1,4 @@
 class Picture < ApplicationRecord
-
   belongs_to :user
   has_many :likes, dependent: :destroy
 
@@ -7,5 +6,4 @@ class Picture < ApplicationRecord
   validates :image, presence: true
 
   scope :recent, -> { order(id: :desc).limit(4) }
-
 end
