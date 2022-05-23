@@ -3,8 +3,11 @@
             method: :post,
             remote: true,
             data: { 'turbolinks' => false } do %>
-  <%= picture.likes.count %>        
-  <button class="text-pink-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-    <i class="fas fa-heart"></i>
-  </button>
+<div class="text-runte-orange">
+  <%= picture.likes.count %>      
+  <%=button_tag type: :button do %>
+    <%= image_tag 'rgtm2.png', size: '30x30' %>
+</div>  
+  <% end %>
 <% end %>
+
