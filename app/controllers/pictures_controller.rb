@@ -22,6 +22,8 @@ class PicturesController < ApplicationController
 
   def likes
     @like_pictures = current_user.like_pictures.include(:user).order(created_at: :desc)
+    @like = @picture.likes + 1
+    @picture.update(likes: @like)
   end
 
   private
