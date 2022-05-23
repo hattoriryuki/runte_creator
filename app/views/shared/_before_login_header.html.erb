@@ -1,12 +1,12 @@
-<header class="bg-purple-400">
+<header class="text-gray-600 body-font">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <%= link_to root_path, class: "flex title-font font-lg items-left text-white mb-5 md:mb-0" do %>
-      <span class="font-semibold text-xl tracking-tight"><%= t('defaults.title') %></span>
+    <%= link_to root_path, class: 'flex items-center mb-4 md:mb-0' do %>
+      <%= image_tag 'runte_creator_logo.png', size: '300x60' %>
     <% end %>
-    <nav class="md:ml-auto flex flex-wrap items-right text-white">
-      <%= link_to t('defaults.gallary'), pictures_path, class: 'mr-5 hover:text-yellow-500' , data: { 'turbolinks' => false } %>
-      <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-yellow-500', data: { 'turbolinks' => false } %>
-      <%= link_to t('defaults.login'), login_path, class: 'mr-5 has-child hover:text-yellow-500' %>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <%= link_to t('defaults.gallary'), pictures_path, class: 'mr-5 hover:text-gray-900' %>
+      <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-gray-900' %>
+      <%= link_to t('defaults.login'), login_path, class: 'hover:text-gray-900' %>
     </nav>
   </div>
 </header>

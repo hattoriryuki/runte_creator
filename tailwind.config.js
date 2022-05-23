@@ -5,11 +5,18 @@ module.exports = {
     extend: {
       colors: {
         accent: '#FFB600',
+        'runte-orange': '#FC7400',
+        'runte-purple': '#5353DA',
       }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+      require('flowbite/plugin')
+  ],
+  content: [
+      "./node_modules/flowbite/**/*.js"
+    ]
 }

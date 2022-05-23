@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<div id="errors">
-  <h1>403 Forbidden</h1>
-  <p>指定されたページを表示する権限がありません</p>
-</div>
+<header>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</header>
+<body>
+  <div class="bg-white py-6 sm:py-8 lg:py-12">
+    <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+      <div class="flex flex-col items-center">
+        <p class="text-indigo-500 text-sm md:text-base font-semibold uppercase mb-4">That's a 403</p>
+        <h1 class="text-gray-800 text-2xl md:text-3xl font-bold text-center mb-2">ForBidden!</h1>
+        <p class="max-w-screen-md text-gray-500 md:text-lg text-center mb-12">権限がありません</p>
+        <a href="/" class="text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2">トップページへ</a>
+      </div>
+    </div>
+  </div>
+</body>
