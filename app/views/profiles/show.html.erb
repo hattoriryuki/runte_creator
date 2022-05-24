@@ -21,12 +21,12 @@
       <div class="w-full">
         <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600" onclick="changeAtiveTab(event,'tab-profile')">
+            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-runte-orange" onclick="changeAtiveTab(event,'tab-profile')">
               <%= t('.user_drawn_pictures') %>
             </a>
           </li>
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-settings')">
+            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-runte-orange bg-white" onclick="changeAtiveTab(event,'tab-settings')">
               <%= t('.user_liked_pictures') %>
             </a>
           </li>
@@ -81,16 +81,16 @@
         tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
         for(let i = 0 ; i < aElements.length; i++){
           aElements[i].classList.remove("text-white");
-          aElements[i].classList.remove("bg-pink-600");
-          aElements[i].classList.add("text-pink-600");
+          aElements[i].classList.remove("bg-runte-orange");
+          aElements[i].classList.add("text-runte-orange");
           aElements[i].classList.add("bg-white");
           tabContents[i].classList.add("hidden");
           tabContents[i].classList.remove("block");
         }
-        element.classList.remove("text-pink-600");
+        element.classList.remove("text-runte-orange");
         element.classList.remove("bg-white");
         element.classList.add("text-white");
-        element.classList.add("bg-pink-600");
+        element.classList.add("bg-runte-orange");
         document.getElementById(tabID).classList.remove("hidden");
         document.getElementById(tabID).classList.add("block");
       }
