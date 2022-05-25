@@ -1,5 +1,5 @@
 <div id="js-like-button-for-picture-<%=picture.id%>" class='flex items-center'>
-  <%= link_to likes_path(picture_id: picture.id),
+  <%= link_to picture_likes_path(picture),
               id: "js-like-button-for-picture-#{picture.id}",
               method: :post,
               remote: true do %>
