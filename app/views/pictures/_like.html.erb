@@ -1,12 +1,11 @@
-<%= link_to likes_path(picture_id: picture.id),
-            id: "js-like-button-for-picture-#{picture.id}",
-            method: :post,
-            remote: true,
-            data: { 'turbolinks' => false } do %>
-  <div class="text-runte-orange">    
-    <%=button_tag type: :button do %>
-      <%= image_tag 'rgtm2.png', size: '30x30' %>
-    <% end %>
+<div id="js-like-button-for-picture-<%=picture.id%>" class='flex items-center'>
+  <%= link_to likes_path(picture_id: picture.id),
+              id: "js-like-button-for-picture-#{picture.id}",
+              method: :post,
+              remote: true do %>
+    <%= image_tag 'rgtm2.png', size: '30x30' %>
+  <% end %>
+  <p class="text-runte-orange">    
     <%= picture.likes.count %>  
-   </div> 
-<% end %>
+  </p> 
+</div>
