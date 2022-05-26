@@ -9,8 +9,10 @@
       <h2 class="text-sm title-font font-medium text-indigo-500 mb-1 mt-5"><%= t('.about_user') %></h2>
       <%= link_to picture.user.name, user_path(picture.user), class: 'title-font text-lg font-medium text-gray-900 mb-3' %>
       <p class="leading-relaxed"><%= picture.picture_comment %></p>
-      <% if current_user.general? || current_user.admin? %>
+      <% if logged_in? %>
         <%= render 'like', picture: picture unless current_user.own?(picture) %>
+      <% else %>
+        <%= render 'like', picture: picture %>
       <% end %>
     </div>
   </div>
