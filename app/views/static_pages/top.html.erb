@@ -1,29 +1,56 @@
 <%= render partial: 'shared/loading' %>
-<div class="bg-white py-6 sm:py-8 lg:py-12">
+<div class="bg-white sm:py-8 lg:py-12">
   <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
     <h2 class="text-gray-600 body-font text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-12"><%= t('.message') %></h2>
-    <div class="grid md:grid-cols-2 gap-4 md:gap-8">
+    <div class="grid md:grid-cols-2 gap-4">
       <div class="flex flex-col items-center gap-4 md:gap-6 px-8 py-6">
         <div class="flex flex-col sm:flex-row items-center gap-2 md:gap-3">
           <%= image_tag '04_a.png' %>
         </div>
       </div>
-      <div class="flex flex-col items-center rounded-lg gap-4 md:gap-6 px-8 py-6">
-        <div class="flex flex-col gap-4 p-4 md:p-8">
-          <%= link_to t('.login'), login_path, class:"text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" if current_user.nil? %>
-          <%= link_to t('defaults.guest_login'), guest_path, class:"text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2", method: :post if current_user.nil? %>
-          <%= link_to t('.index'), pictures_path, class:"text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2"%>
-          <%= link_to t('.start'), new_picture_path, class: "text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2", data: { 'turbolinks' => false } unless current_user.nil? %>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
       <% if @pictures.present? %>
-        <%= render partial: 'users/toppicture', collection: @pictures, as: 'picture' %>
+        <div class="swiper">
+        <div class="text-gray-600 text-center text-xl"><%= t('.post') %></div>
+          <div class="swiper-wrapper">
+            <%= render partial: 'users/toppicture', collection: @pictures, as: 'picture' %>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       <% else %>
         <p><%= t('defaults.message.no_picture') %></p>
       <% end %>
-    </div>    
+    </div>
+    <div class="rounded-lg gap-4 md:gap-6 px-8 py-6 grid grid-col-8">
+      <div class="flex gap-4 p-4 md:p-8 col-start-2">
+        <%= link_to t('.index'), pictures_path, class: "text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" %>
+        <div class="flex content col-start-3">
+          <a class="js-modal-open text-white bg-indigo-400 hover:bg-indigo-500 font-medium rounded-lg text-lg px-5 py-2.5 text-center mr-2 mb-2" href=""><%= t('.start') %></a>
+        </div>
+      </div>
+    </div> 
   </div>
 </div>
+<div class="modal js-modal">
+  <div class="modal__bg js-modal-close"></div>
+  <div class="modal__content">
+    <div class="bg-runte-orange">
+      <p class="text-2xl text-white ml-2">注意事項</p>
+    </div>
+    <p class="text-xl mt-2 ml-2">このサービスは、らんてくんを描いて投稿できるサービスです！</p>
+    <ul class="mt-5 ml-10 text-sm text-gray-600">
+      <li>Runte Creatorは、PCでのみプレイ可能です。</li>
+      <li>推奨ブラウザは、Google Chromeです。</li>
+      <li>一度投稿したらんてくんは、削除することができない仕様としています。</li>どうしても削除したい場合は、お問い合わせでご連絡下さい。
+      <li>当アプリの利用を開始した時点で、利用規約、プライバシーポリシーに同意いただいたものとみなします。</li>
+      <li>らんてくんを侮辱するような投稿は禁止とします。運営側で削除させていただく場合がありますので、予めご了承下さい。</li>
+    </ul>
+    <div class="text-right mt-10 mb-2">
+      <%= link_to t('.drawing'), new_picture_path, class: "text-runte-orange hover:bg-red-100 font-medium rounded-lg text-sm px-5 py-2.5", data: { 'turbolinks' => false } %>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "static_peges/top.js" %>
+<%= javascript_pack_tag "swiper/swiper.js" %>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

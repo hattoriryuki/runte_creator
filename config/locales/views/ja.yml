@@ -32,7 +32,9 @@ ja:
       message: 'らんてくんをお絵描きして自慢しよう！'
       login: 'ログインして遊ぶ'
       index: 'みんなのらんてくんを見る'
-      start: 'お絵描きスタート！!'
+      start: 'はじめる'
+      drawing: 'お絵描きスタート！！'
+      post: 'みんなのらんてくん'
   users:
     new:
       title: 'ユーザー登録'
@@ -56,7 +58,6 @@ ja:
       success: 'ログアウトしました'
     guest_login:
       success: 'ゲストとしてログインしました'
-
   oauths:
     success: 'twitterでログインしました'
   pictures:
@@ -78,8 +79,10 @@ ja:
       message: 'みんなが今までに投稿してくれた歴代らんてくん達だぞ！'
       no_result: '今はらんてくんがいないようです。'
     show:
+      title: 'イラスト詳細'
       about_user: 'このらんてくんの生みの親'
       share: 'らんてくりえーたー#RUNTEQ'
+      tweet: 'Twitterシェア'
     picture:
       about_user: 'このらんてくんの生みの親'
     likes:
