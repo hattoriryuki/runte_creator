@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :require_login, only: %i[new create likes]
+
   def new
     @picture = Picture.new
   end
