@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :require_login
   before_action :set_user, only: %i[show edit update]
+  before_action :loading_image, only: %i[show]
 
   def show
     @pictures = @user.pictures.order(created_at: :desc).page(params[:user_page])

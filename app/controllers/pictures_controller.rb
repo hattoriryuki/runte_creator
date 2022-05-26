@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :loading_image, only: %i[index]
   before_action :require_login, only: %i[new create likes]
 
   def new

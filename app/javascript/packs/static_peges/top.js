@@ -12,3 +12,4 @@ $(function(){
       return false;
   });
 });
+console.log;
