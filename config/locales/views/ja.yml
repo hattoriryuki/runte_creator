@@ -97,7 +97,7 @@ ja:
     show:
       title: 'プロフィール'
       user_drawn_pictures: '投稿したらんてくん'
-      user_liked_pictures: 'いいねしたらんてくん'
+      user_liked_pictures: 'RGTMしたらんてくん'
       edit: '編集'
     edit:
       title: 'プロフィール編集'

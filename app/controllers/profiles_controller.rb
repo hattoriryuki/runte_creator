@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
   def show
     @pictures = @user.pictures.order(created_at: :desc).page(params[:user_page])
-    @like_pictures = @user.like_pictures.order(created_at: :desc).page(params[:like_page])
+    @like_pictures = @user.like_pictures.distinct.order(created_at: :desc).page(params[:like_page])
   end
 
   def edit; end
