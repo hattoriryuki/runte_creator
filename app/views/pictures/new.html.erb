@@ -31,9 +31,9 @@
         <label><%= Picture.human_attribute_name(:picture_comment) %></label>
         <textarea id="picture_comment" class="w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" placeholder="<%= t('.comment') %>"></textarea>
       </div>
-      <div class="mt-10 ml-10">
+      <div class="mt-10 ml-10 text-gray-600">
         <button class="text-xl px-2 py-1 text-yellow-500 border border-yellow-500 font-semibold rounded hover:bg-yellow-100" id="js-pictureUpload"><%= t('.complete') %></button>  
-        <button><a id="js-downloadCanvas" href="#" download="canvas.jpg"><%= t('.download') %></a></button> 
+        <button><a id="js-downloadCanvas" href="#" download="canvas.jpg"><i class="fa fa-download ml-5 mr-1"></i><%= t('.download') %></a></button> 
       </div>
     </div>
   </div>
