@@ -1,11 +1,35 @@
-<div id="js-like-button-for-picture-<%=picture.id%>" class='flex items-center'>
+<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+<div id="js-like-button-for-picture-<%= picture.id %>" class='flex items-center'>
   <%= link_to picture_likes_path(picture),
-              id: "js-like-button-for-picture-#{picture.id}",
+              id: "js-like-button-for-picture-#{ picture.id }",
               method: :post,
               remote: true do %>
-    <%= image_tag 'rgtm2.png', size: '30x30' %>
+    <%= image_tag 'rgtm2.png', size: '30x30', class: 'rgtm_btn', id: 'button' %>
   <% end %>
   <p class="text-runte-orange">    
     <%= picture.likes.count %>  
   </p> 
 </div>
+<style>
+  #button
+{
+  display: inline-block;
+  cursor: pointer;
+}
+#button.jump
+{
+  animation: 0.3s ease-in 0s 1 jump;
+}
+@keyframes jump
+{
+  0% { transform: translateY(0px) rotateZ(0deg); }
+  30% { transform: translateY(-20px) rotateZ(10deg); }
+  35% { transform: translateY(-20px) rotateZ(-30deg); }
+  45% { transform: translateY(-20px) rotateZ(30deg); }
+  55% { transform: translateY(-20px) rotateZ(-30deg); }
+  65% { transform: translateY(-20px) rotateZ(30deg); }
+  70% { transform: translateY(-20px) rotateZ(10deg); }
+  100% { transform: translateY(0px) rotateZ(0deg); }
+}
+</style>
+<%= javascript_pack_tag "pictures/likes.js" %>
