@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     download = document.getElementById('js-downloadCanvas'),
     elaser = document.getElementById('js-eraser'),
     color = document.getElementById('js-colorBox'),
+    tooltips = document.getElementById('js-tooltips'),
     canvasClear = document.getElementById('js-clear'),
     undoButton = document.getElementById('undo'),
     redoButton = document.getElementById('redo');
@@ -167,6 +168,13 @@ document.addEventListener('DOMContentLoaded',()=> {
     lineColor = color.value;
     ctx.strokeStyle = lineColor;
   });
+
+  color.addEventListener('mouseenter', ()=> {
+    tooltips.classList.remove('hidden');
+  })
+  color.addEventListener('mouseleave', ()=> {
+    tooltips.classList.add('hidden');
+  })
 
   elaser.addEventListener('click', changeDrawMode);
 
