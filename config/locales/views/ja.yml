@@ -61,8 +61,6 @@ ja:
       success: 'ゲストとしてログインしました'
   oauths:
     success: 'twitterでログインしました'
-    guest_login:
-      success: 'ゲストとしてログインしました'
   pictures:
     new:
       width: '太さ'
