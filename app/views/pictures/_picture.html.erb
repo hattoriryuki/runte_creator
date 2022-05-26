@@ -12,7 +12,7 @@
       <% if logged_in? %>
         <%= render 'like', picture: picture unless current_user.own?(picture) %>
       <% else %>
-        <%= render 'like', picture: picture %>
+        <%= render 'non_logged_likes', picture: picture %>
       <% end %>
     </div>
   </div>
