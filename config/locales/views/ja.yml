@@ -15,6 +15,7 @@ ja:
     guest_user: 'ゲストユーザー'
     privacy: 'プライバシーポリシー'
     teams: '利用規約'
+    member_profile: '運営'
     contact: 'お問い合わせ'
     message:
       require_login: 'ログインしてください'
