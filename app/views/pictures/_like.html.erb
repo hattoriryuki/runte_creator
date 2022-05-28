@@ -1,4 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 <div id="js-like-button-for-picture-<%= picture.id %>" class='flex items-center'>
   <% if current_user.general? || current_user.admin? %>
     <%= link_to picture_likes_path(picture),
@@ -40,4 +39,5 @@
     100% { transform: translateY(0px) rotateZ(0deg); }
   }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 <%= javascript_pack_tag "pictures/likes.js" %>
