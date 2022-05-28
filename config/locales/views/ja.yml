@@ -12,9 +12,9 @@ ja:
     inquiry: 'お問い合わせ'
     reset_password: 'パスワードリセット'
     guest_login: 'ゲストログイン'
-    guest_user: 'ゲストユーザー'
     privacy: 'プライバシーポリシー'
     teams: '利用規約'
+    member_profile: '運営'
     contact: 'お問い合わせ'
     message:
       require_login: 'ログインしてください'
@@ -33,7 +33,9 @@ ja:
       message: 'らんてくんをお絵描きして自慢しよう！'
       login: 'ログインして遊ぶ'
       index: 'みんなのらんてくんを見る'
-      start: 'お絵描きスタート！!'
+      start: 'はじめる'
+      drawing: 'お絵描きスタート！！'
+      post: 'みんなのらんてくん'
   users:
     new:
       title: 'ユーザー登録'
@@ -55,10 +57,10 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-  oauths:
-    success: 'twitterでログインしました'
     guest_login:
       success: 'ゲストとしてログインしました'
+  oauths:
+    success: 'twitterでログインしました'
   pictures:
     new:
       width: '太さ'
@@ -81,9 +83,9 @@ ja:
       title: 'イラスト詳細'
       about_user: 'このらんてくんの生みの親'
       share: 'らんてくりえーたー#RUNTEQ'
+      tweet: 'Twitterシェア'
     picture:
       about_user: 'このらんてくんの生みの親'
-      guest_user: 'ゲストユーザー'
     likes:
       title: 'いいね一覧'
       no_result: 'いいね中のらんてくんはありません。'
@@ -96,7 +98,7 @@ ja:
     show:
       title: 'プロフィール'
       user_drawn_pictures: '投稿したらんてくん'
-      user_liked_pictures: 'いいねしたらんてくん'
+      user_liked_pictures: 'RGTMしたらんてくん'
       edit: '編集'
     edit:
       title: 'プロフィール編集'

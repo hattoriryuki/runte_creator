@@ -1,18 +1,17 @@
+<%= render partial: 'shared/loading' %>
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
     <h2 class="text-gray-600 body-font text-2xl lg:text-3xl font-bold text-center mb-8 md:mb-10"><%= t('.title') %></h2>
-    <div class="flex flex-col items-center gap-4 md:gap-6">
+    <div class="flex flex-col items-center gap-4 md:gap-6 mb-10">
       <div class="flex flex-col sm:flex-row items-center gap-10">
         <div class="w-24 md:w-32 h-24 md:h-32 bg-gray-100 rounded-full overflow-hidden shadow-lg">
           <%= image_tag  @user.avatar_url, class: "w-full h-full object-cover object-center" %>
         </div>
-        <div class="font-bold">
-          <div class="text-1xl pb-3">
-            <%= "EMAIL:" %><a class="text-2xl text-indigo-500"><%= @user.email %></a>
+        <div class="text-gray-600 font-medium">
+          <div class="pb-3">
+            Email: <a class="text-runte-purple"><%= @user.email %></a>
           </div>
-          <div class="text-1xl">
-            <%= "NAME:" %><a class="text-2xl text-indigo-500"><%= @user.name %></a>
-          </div>
+            Name: <a class="text-runte-purple"><%= @user.name %></a>
         </div>
         <div>
           <%= link_to t(".edit"), edit_profile_path, class: "inline-block bg-gray-500 hover:bg-gray-600 active:bg-gray-700 focus-visible:ring ring-gray-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
@@ -23,12 +22,12 @@
       <div class="w-full">
         <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600" onclick="changeAtiveTab(event,'tab-profile')">
+            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-runte-orange" onclick="changeAtiveTab(event,'tab-profile')">
               <%= t('.user_drawn_pictures') %>
             </a>
           </li>
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" onclick="changeAtiveTab(event,'tab-settings')">
+            <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-runte-orange bg-white" onclick="changeAtiveTab(event,'tab-settings')">
               <%= t('.user_liked_pictures') %>
             </a>
           </li>
@@ -83,16 +82,16 @@
         tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
         for(let i = 0 ; i < aElements.length; i++){
           aElements[i].classList.remove("text-white");
-          aElements[i].classList.remove("bg-pink-600");
-          aElements[i].classList.add("text-pink-600");
+          aElements[i].classList.remove("bg-runte-orange");
+          aElements[i].classList.add("text-runte-orange");
           aElements[i].classList.add("bg-white");
           tabContents[i].classList.add("hidden");
           tabContents[i].classList.remove("block");
         }
-        element.classList.remove("text-pink-600");
+        element.classList.remove("text-runte-orange");
         element.classList.remove("bg-white");
         element.classList.add("text-white");
-        element.classList.add("bg-pink-600");
+        element.classList.add("bg-runte-orange");
         document.getElementById(tabID).classList.remove("hidden");
         document.getElementById(tabID).classList.add("block");
       }

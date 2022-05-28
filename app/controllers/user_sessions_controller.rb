@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to root_path, notice: t('.success')
+      redirect_back_or_to new_picture_path, notice: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new
@@ -19,6 +19,6 @@ class UserSessionsController < ApplicationController
   def guest_login
     @user = User.guest_login
     auto_login(@user)
-    redirect_to root_path, notice: t('.success')
+    redirect_to new_picture_path, notice: t('.success')
   end
 end
