@@ -7,8 +7,8 @@
       <%= link_to t('defaults.gallary'), pictures_path, class: 'mr-5 hover:text-gray-900' %>
       <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-gray-900' %>
       
-      <div id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500">
-        <%= image_tag current_user.avatar_url, class: 'w-full h-full object-cover object-center' %>
+      <div id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500">
+        <%= image_tag current_user.avatar_url, class: 'w-full h-full rounded-full object-cover object-center' %>
       </div>
       <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
