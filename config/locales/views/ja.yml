@@ -73,7 +73,7 @@ ja:
       comment: '50文字以内で入力してください'
       flash_danger: 'コメントは50文字以内で入力して下さい'
       runte_color: 'らんてくんの色'
-      blue_rgb: '青: RGB 83, 83, 218'
+      purple_rgb: '紫: RGB 83, 83, 218'
       orange_rgb: '橙: RGB 252, 116, 0'
     create:
       success: '投稿できました'
