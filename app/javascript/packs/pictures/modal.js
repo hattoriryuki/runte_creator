@@ -4,6 +4,6 @@ $(function(){
   Cookies.get('btnFlg') == 'on'?$('.js-modal').hide():$('.js-modal').show();
   setTimeout(function(){
     $('.js-modal').fadeOut();
-    Cookies.set('btnFlg', 'on', { expires: 30,path: '/' });
+    Cookies.set('btnFlg', 'on', { expires: 1,path: '/' });
   }, 800);
 });
