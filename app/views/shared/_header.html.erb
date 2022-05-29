@@ -8,7 +8,7 @@
       <%= link_to t('defaults.drawing'), new_picture_path, class: 'mr-5 hover:text-gray-900' %>
       
       <div id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" class="w-10 h-10 rounded-full">
-        <%= image_tag current_user.avatar_url, class: 'w-full h-full rounded-full object-cover object-center' %>
+        <%= image_tag current_user.avatar_url, class: 'w-full h-full rounded-full object-cover object-center shadow-lg' %>
       </div>
       <div id="dropdownInformation" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
