@@ -18,9 +18,9 @@
     <div class="text-center pt-5">
       <%= f.submit t('defaults.login'), class:"inline-block bg-runte-purple hover:bg-indigo-700 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3" %>
     </div>
-    <div class="text-center p-6">
-      <%= link_to t('.to_register_page'), new_user_path %>
-      <%= link_to  t('.password_forget'),new_password_reset_path %>
+    <div class="text-center p-6 ">
+      <%= link_to t('.to_register_page'), new_user_path, class: 'ml-3 mr-5 text-gray-500 hover:text-gray-900' %>
+      <%= link_to  t('.password_forget'),new_password_reset_path, class: 'text-gray-500 hover:text-gray-900' %>
     </div>
   <% end %>
   <div class="grid grid-cols-8 border-t border-gray-200">
