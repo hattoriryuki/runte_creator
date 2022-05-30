@@ -11,16 +11,16 @@ module ApplicationHelper
       charset: 'UTF-8',
       og: {
         title: 'RunteCreator',
-        description: 'RunteCreator',
+        description: '勉強で行き詰まった時にらんてくんを描いて、やすらぎと笑いを与え、現実逃避できるサービスです',
         type: 'website',
         url: [request.original_url],
-        image: asset_url('ogp_logo.png'),
+        image: asset_url('ogp_default.png'),
         locale: "ja_JP"
       },
       twitter: {
         site: '@runtecreator',
-        card: 'summary',
-        image: asset_url('ogp_logo.png')
+        card: 'summary_large_image',
+        image: asset_url('ogp_default.png')
       },
     }
   end
