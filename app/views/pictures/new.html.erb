@@ -18,7 +18,7 @@
       <div class="mt-5 ml-10 colormenu">
         <p><%= t('.color') %></p>
         <input type="color" id="js-colorBox">
-        <button class="bg-gray-100 rounded border text-left px-4 py-2 hidden" id="js-tooltips">
+        <button class="bg-gray-100 rounded border text-xs text-left px-4 py-2 hidden" id="js-tooltips">
           <ul>
             <li><%= t('.runte_color') %></li>
             <li><%= t('.purple_rgb') %></li>
@@ -27,20 +27,22 @@
         </button>
       </div>
       <div class="mt-5 ml-10 drawmenu">
-        <button class="eraser bg-runte-purple font-semibold text-white py-1 px-3 rounded hover:bg-blue-600" id="js-eraser"><%= t('.eraser') %></button>
+        <button class="eraser bg-runte-purple font-semibold text-white py-1 px-3 rounded hover:bg-blue-600 mb-5" id="js-eraser"><%= t('.eraser') %></button>
         <button class="clear bg-runte-purple font-semibold text-white py-1 px-3 rounded hover:bg-blue-600" id="js-clear"><%= t('.clear') %></button>
       </div>
-      <div class="mt-10 ml-10">
-        <button class="bg-runte-purple font-semibold text-white py-1 px-3 rounded hover:bg-blue-600" id="undo"><%= t('.undo') %></button>  
+      <div class="mt-5 ml-10">
+        <button class="bg-runte-purple font-semibold text-white py-1 px-3 rounded hover:bg-blue-600 mr-1" id="undo"><%= t('.undo') %></button>  
         <button class="bg-runte-purple font-semibold text-white py-1 px-3 rounded hover:bg-blue-600" id="redo"><%= t('.redo') %></button>  
       </div>
-      <div class="form-group ml-10 mt-10">
+      <div class="form-group ml-10 mt-8">
         <label><%= Picture.human_attribute_name(:picture_comment) %></label>
         <textarea id="picture_comment" class="w-full bg-gray-50 border focus:ring ring-purple-400 rounded outline-none transition duration-100 px-3 py-2" placeholder="<%= t('.comment') %>"></textarea>
       </div>
-      <div class="mt-10 ml-10 text-gray-700 hover:text-gray-400">
+      <div class="mt-8 ml-10">
         <button class="text-xl px-2 py-1 text-yellow-500 border border-yellow-500 font-semibold rounded hover:bg-yellow-100" id="js-pictureUpload"><%= t('.complete') %></button>  
-        <button><a id="js-downloadCanvas" href="#" download="canvas.jpg"><i class="fa fa-download ml-5 mr-1"></i><%= t('.download') %></a></button> 
+      </div>
+      <div class="mt-6 ml-10 text-gray-700 hover:text-gray-400">
+        <button><a id="js-downloadCanvas" href="#" download="canvas.jpg"><i class="fa fa-download mr-1"></i><%= t('.download') %></a></button> 
       </div>
     </div>
   </div>
