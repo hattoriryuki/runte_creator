@@ -10,7 +10,7 @@
       <% if picture.user.general? || picture.user.admin? %>
         <%= link_to picture.user.name, user_path(picture.user), class: 'title-font text-lg font-medium text-gray-900 mb-3' %>
       <% else %>
-        <h2><%= picture.user.name %></h2>
+        <h2 class="title-font text-lg font-medium text-gray-900 mb-3"><%= picture.user.name %></h2>
       <% end %>
       <p class="leading-relaxed"><%= picture.picture_comment %></p>
       <% if logged_in? %>
