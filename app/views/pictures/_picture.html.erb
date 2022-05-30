@@ -14,7 +14,7 @@
       <% end %>
       <p class="leading-relaxed"><%= picture.picture_comment %></p>
       <% if logged_in? %>
-        <%= render 'like', picture: picture unless current_user.own?(picture) %>
+        <%= render 'like', picture: picture %>
       <% else %>
         <%= render 'non_logged_likes', picture: picture %>
       <% end %>
