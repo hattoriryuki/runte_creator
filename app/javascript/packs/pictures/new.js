@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded',()=> {
   canvas.addEventListener('mousemove', movePoint, false);
   canvas.addEventListener('mouseup', endPoint, false);
 
+  canvas.addEventListener('touchstart', touchStartPoint, false);
+  canvas.addEventListener('touchmove', touchMovePoint, false);
+  canvas.addEventListener('touchend', endPoint, false);
+
   function setBgColor(){
     ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
@@ -71,6 +75,26 @@ document.addEventListener('DOMContentLoaded',()=> {
     }
     moveflg = 0;
     setLocalStoreage();
+  }
+
+  function touchStartPoint(e){
+    e.preventDefault();
+    ctx.beginPath();
+    Xpoint = e.layerX;
+    Ypoint = e.layerY;
+    ctx.moveTo(Xpoint, Ypoint);
+  }
+
+  function touchMovePoint(e){
+    if (e.buttons === 1 || e.witch === 1 || e.type == 'touchmove'){
+      Xpoint = e.layerX;
+      Ypoint = e.layerY;
+      moveflg = 1;
+      drawJudgement = 1;
+      ctx.lineTo(Xpoint, Ypoint);
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
   }
 
   function resetCanvas(){
