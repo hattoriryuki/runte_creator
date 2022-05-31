@@ -64,7 +64,8 @@ ja:
   pictures:
     new:
       width: '太さ'
-      color: '色'
+      other_color: '他の色'
+      runte-color: 'らんてくん色'
       eraser: '消しゴム'
       clear: '全消し'
       undo: '戻る'

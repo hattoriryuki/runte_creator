@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded',()=> {
     pictureUpload = document.getElementById('js-pictureUpload'),
     download = document.getElementById('js-downloadCanvas'),
     elaser = document.getElementById('js-eraser'),
+    runtePurple = document.getElementById('runte-purple'),
+    runteOrange = document.getElementById('runte-orange'),
     color = document.getElementById('js-colorBox'),
-    tooltips = document.getElementById('js-tooltips'),
     canvasClear = document.getElementById('js-clear'),
     undoButton = document.getElementById('undo'),
     redoButton = document.getElementById('redo');
@@ -188,17 +189,18 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   initConfigOfLineWidth();
 
+  runtePurple.addEventListener('click', ()=> {
+    ctx.strokeStyle = 'rgb(83, 83, 218)';
+  });
+
+  runteOrange.addEventListener('click', ()=> {
+    ctx.strokeStyle = 'rgb(252, 116, 0)';
+  });
+
   color.addEventListener('change', ()=> {
     lineColor = color.value;
     ctx.strokeStyle = lineColor;
   });
-
-  color.addEventListener('mouseenter', ()=> {
-    tooltips.classList.remove('hidden');
-  })
-  color.addEventListener('mouseleave', ()=> {
-    tooltips.classList.add('hidden');
-  })
 
   elaser.addEventListener('click', changeDrawMode);
 
