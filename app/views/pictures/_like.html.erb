@@ -4,13 +4,13 @@
                 id: "js-like-button-for-picture-#{ picture.id }",
                 method: :post,
                 remote: true do %>
-      <%= image_tag 'rgtm2.png', size: '30x30', class: 'rgtm_btn button', id: 'button' %>
+      <%= image_tag 'rgtm2.png', size: '40x40', class: 'rgtm_btn button', id: 'button' %>
     <% end %>
   <% else %>
     <%= link_to picture_likes_path(picture),
                 id: "js-like-button-for-picture-#{ picture.id }",
                 method: :post do %>
-      <%= image_tag 'rgtm2.png', size: '30x30' %>
+      <%= image_tag 'rgtm2.png', size: '40x40' %>
     <% end %>
   <% end %>
   <p class="text-runte-orange ml-1">    
