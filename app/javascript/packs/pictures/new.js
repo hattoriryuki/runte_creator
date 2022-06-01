@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   canvas.addEventListener('touchstart', touchStartPoint, false);
   canvas.addEventListener('touchmove', touchMovePoint, false);
-  canvas.addEventListener('touchend', endPoint, false);
+  canvas.addEventListener('touchend', touchEndPoint, false);
 
   function setBgColor(){
     ctx.fillStyle = bgColor;
@@ -84,6 +84,16 @@ document.addEventListener('DOMContentLoaded',()=> {
     Xpoint = e.layerX;
     Ypoint = e.layerY;
     ctx.moveTo(Xpoint, Ypoint);
+  }
+
+  function touchEndPoint(e){
+    if (moveflg === 0){
+      ctx.lineTo(Xpoint-1, Ypoint-1);
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+    moveflg = 0;
+    setLocalStoreage();
   }
 
   function touchMovePoint(e){
