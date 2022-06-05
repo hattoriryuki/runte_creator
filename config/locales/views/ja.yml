@@ -119,6 +119,10 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
+  comments:
+    comments:
+      title: 'コメント'
+      create: 'コメントを書いてみる'
 
   admin:
     user_sessions:

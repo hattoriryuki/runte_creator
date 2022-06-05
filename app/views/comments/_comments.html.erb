@@ -1,0 +1,9 @@
+<div class="max-w-screen-md px-4 pb-10 mx-auto">
+  <h2 class="text-2xl font-bold text-center mb-2"><%= t('.title') %></h2>
+  <% if current_user&.general? || current_user&.admin? %>
+    <%= render 'comments/form', picture: @picture, comment: @comment %>
+  <% end %>
+  <div id="js-comments" class="divide-y">
+    <%= render @comments %>
+  </div>
+</div>

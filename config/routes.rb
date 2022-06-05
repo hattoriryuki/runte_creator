@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get :likes
     end
+    resources :comments, only: %i[create destroy update]
   end
   resources :likes, only: %i[create destroy]
   resources :password_resets, only: %i[new create edit update]

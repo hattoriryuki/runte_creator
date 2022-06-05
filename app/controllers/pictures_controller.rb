@@ -21,6 +21,8 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(picture_id: params[:id]).includes(:user).order(created_at: :desc)
   end
 
   def likes
