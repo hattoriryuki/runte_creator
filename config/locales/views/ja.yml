@@ -21,7 +21,8 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
-      no_picture: '今はらんてくんがいないようです。'
+      no_picture: '今はらんてくんがいないようです'
+      no_comment: '今はコメントがないようです'
     pagination:
       first: '最初'
       last: '最後'

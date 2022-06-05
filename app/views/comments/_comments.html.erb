@@ -4,6 +4,10 @@
     <%= render 'comments/form', picture: @picture, comment: @comment %>
   <% end %>
   <div id="js-comments" class="divide-y">
-    <%= render @comments %>
+    <% if @comments.exists? %>
+      <%= render @comments %>
+    <% else %>
+      <p id="no-comment" class="p-6"><%= t('defaults.message.no_comment') %></p>
+    <% end%>
   </div>
 </div>
