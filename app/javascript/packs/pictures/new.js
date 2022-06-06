@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded',()=> {
     pictureUpload = document.getElementById('js-pictureUpload'),
     download = document.getElementById('js-downloadCanvas'),
     elaser = document.getElementById('js-eraser'),
+    runtePurple = document.getElementById('runte-purple'),
+    runteOrange = document.getElementById('runte-orange'),
     color = document.getElementById('js-colorBox'),
-    tooltips = document.getElementById('js-tooltips'),
     canvasClear = document.getElementById('js-clear'),
     undoButton = document.getElementById('undo'),
     redoButton = document.getElementById('redo');
@@ -35,6 +36,10 @@ document.addEventListener('DOMContentLoaded',()=> {
   canvas.addEventListener('mousedown', startPoint, false);
   canvas.addEventListener('mousemove', movePoint, false);
   canvas.addEventListener('mouseup', endPoint, false);
+
+  canvas.addEventListener('touchstart', touchStartPoint, false);
+  canvas.addEventListener('touchmove', touchMovePoint, false);
+  canvas.addEventListener('touchend', touchEndPoint, false);
 
   function setBgColor(){
     ctx.fillStyle = bgColor;
@@ -71,6 +76,36 @@ document.addEventListener('DOMContentLoaded',()=> {
     }
     moveflg = 0;
     setLocalStoreage();
+  }
+
+  function touchStartPoint(e){
+    e.preventDefault();
+    ctx.beginPath();
+    Xpoint = e.layerX;
+    Ypoint = e.layerY;
+    ctx.moveTo(Xpoint, Ypoint);
+  }
+
+  function touchEndPoint(e){
+    if (moveflg === 0){
+      ctx.lineTo(Xpoint-1, Ypoint-1);
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+    moveflg = 0;
+    setLocalStoreage();
+  }
+
+  function touchMovePoint(e){
+    if (e.buttons === 1 || e.witch === 1 || e.type == 'touchmove'){
+      Xpoint = e.layerX;
+      Ypoint = e.layerY;
+      moveflg = 1;
+      drawJudgement = 1;
+      ctx.lineTo(Xpoint, Ypoint);
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
   }
 
   function resetCanvas(){
@@ -164,17 +199,18 @@ document.addEventListener('DOMContentLoaded',()=> {
 
   initConfigOfLineWidth();
 
+  runtePurple.addEventListener('click', ()=> {
+    ctx.strokeStyle = 'rgb(83, 83, 218)';
+  });
+
+  runteOrange.addEventListener('click', ()=> {
+    ctx.strokeStyle = 'rgb(252, 116, 0)';
+  });
+
   color.addEventListener('change', ()=> {
     lineColor = color.value;
     ctx.strokeStyle = lineColor;
   });
-
-  color.addEventListener('mouseenter', ()=> {
-    tooltips.classList.remove('hidden');
-  })
-  color.addEventListener('mouseleave', ()=> {
-    tooltips.classList.add('hidden');
-  })
 
   elaser.addEventListener('click', changeDrawMode);
 
