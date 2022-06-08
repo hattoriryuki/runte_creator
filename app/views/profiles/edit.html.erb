@@ -1,11 +1,9 @@
 <div class="bg-white py-6 sm:py-8 lg:py-12">
   <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
-    <div class="mb-10 md:mb-10">
-      <h2 class="text-2xl text-gray-600 body-font font-bold text-center lg:text-3xl mb-4 md:mb-6"><%= t('.title') %></h2>
-      <% if @user.errors.any? %>
-        <%= render 'shared/error_message', object: @user %>
-      <% end %>
-    </div>
+    <h2 class="text-2xl text-gray-600 body-font font-bold text-center lg:text-3xl mb-4 md:mb-6"><%= t('.title') %></h2>
+    <% if @user.errors.any? %>
+      <%= render 'shared/error_message', object: @user %>
+    <% end %>
     <%= render 'shared/user_form', user: @user, url: profile_path %>
   </div>
 </div>

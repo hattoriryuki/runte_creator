@@ -1,0 +1,8 @@
+$("#error_messages").remove()
+<% if @comment.errors.present? %>
+  $("#js-comment-form").prepend("<%= j( render 'shared/error_message', object: @comment ) %>");
+<% else %>
+  $("#no-comment").remove()
+  $("#js-comment-body").val('');
+  $("#js-comments").prepend("<%= j( render 'comments/comment', comment: @comment ) %>");
+<% end %>

@@ -13,7 +13,7 @@
         </div>
       </div>
     <% end %>
-    <div class="md:p-10">
+    <div class="p-10">
       <p class="text-center text-sm title-font font-medium text-runte-purple mb-3">
         <%= t('.about_user') %>
       </p>
@@ -29,6 +29,7 @@
         <% end %>
       </div>
     </div>
+    <%= render 'comments/comments', picture: @picture, comment: @comment%> 
   </div>
 </section>
 

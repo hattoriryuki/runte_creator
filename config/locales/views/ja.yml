@@ -21,7 +21,8 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       not_authenticated: '権限がありません'
-      no_picture: '今はらんてくんがいないようです。'
+      no_picture: '今はらんてくんがいないようです'
+      no_comment: '今はコメントがないようです'
     pagination:
       first: '最初'
       last: '最後'
@@ -120,6 +121,10 @@ ja:
     update:
       success: 'パスワードを変更しました'
       fail: 'パスワードの変更に失敗しました'
+  comments:
+    comments:
+      title: 'コメント'
+      create: 'コメントを書いてみる'
 
   admin:
     user_sessions:
